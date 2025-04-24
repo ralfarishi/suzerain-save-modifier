@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Suzerain Save File Modifier</title>
+
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="topbar">
+				<button id="toggle-theme" class="toggle-btn">
+					<span class="icon">🌙</span> <span class="label">Dark Mode</span>
+				</button>
+			</div>
+
+			<div class="main-content">
+				<div class="container">
+					<h1 class="title">Sordland Story Mode</h1>
+
+					<div class="data-section">
+						<h2>Current budget:</h2>
+						<p id="budget-data" class="data-display"></p>
+
+						<h2>New budget:</h2>
+						<p contenteditable="true" id="new-budget" class="editable">
+							Type your new budget here!
+						</p>
+
+						<h2>Current wealth:</h2>
+						<p id="wealth-data" class="data-display"></p>
+
+						<h2>New wealth:</h2>
+						<p contenteditable="true" id="new-wealth" class="editable">
+							Type your new wealth here!
+						</p>
+					</div>
+				</div>
+
+				<hr />
+				<div class="container">
+					<h1>Kingdom of Rizia (DLC)</h1>
+
+					<form novalidate>
+						<div class="accordion">
+							<!-- Section 1 -->
+							<div class="accordion-item active">
+								<button class="accordion-toggle" type="button">Financial</button>
+								<div class="accordion-content">
+									<div class="card-body">
+										<div class="form-group">
+											<label for="new-authority">New Authority</label>
+											<input type="text" id="new-authority" placeholder="Your new authority" />
+											<div class="feedback">Please enter a number.</div>
+										</div>
+										<div class="form-group">
+											<label for="new-budget-rizia">New Budget</label>
+											<input type="text" id="new-budget-rizia" placeholder="Your new budget" />
+											<div class="feedback">Please enter a number.</div>
+										</div>
+										<div class="form-group">
+											<label for="new-energy">New Energy</label>
+											<input type="text" id="new-energy" placeholder="Your new energy" />
+											<div class="feedback">Please enter a number.</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Section 2 -->
+							<div class="accordion-item active">
+								<button class="accordion-toggle" type="button">Financial (Per Turn)</button>
+								<div class="accordion-content">
+									<div class="card-body">
+										<div class="form-group">
+											<label for="new-authorityPT">New Authority</label>
+											<input type="text" id="new-authorityPT" placeholder="Your new authority PT" />
+											<div class="feedback">Please enter a number.</div>
+										</div>
+										<div class="form-group">
+											<label for="new-budgetPT">New Budget</label>
+											<input type="text" id="new-budgetPT" placeholder="Your new budget PT" />
+											<div class="feedback">Please enter a number.</div>
+										</div>
+										<div class="form-group">
+											<label for="new-energyPT">New Energy</label>
+											<input type="text" id="new-energyPT" placeholder="Your new energy PT" />
+											<div class="feedback">Please enter a number.</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="side-panel">
+				<h2>Tools</h2>
+				<div id="dropzone" class="dropzone">
+					<p>Drop your JSON file here or click to upload</p>
+					<input type="file" id="json-file-input" accept=".json" />
+				</div>
+
+				<div class="form-group download-button-wrapper">
+					<button id="download-button" disabled>Download new savefile</button>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<script src="script.js"></script>
+</html>
