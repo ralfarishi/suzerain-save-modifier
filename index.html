@@ -7,11 +7,11 @@
 
 		<link rel="stylesheet" href="style.css" />
 	</head>
-	<body>
+	<body class="dark-mode">
 		<div class="wrapper">
 			<div class="topbar">
 				<button id="toggle-theme" class="toggle-btn">
-					<span class="icon">🌙</span> <span class="label">Dark Mode</span>
+					<span class="icon">☀️</span> <span class="label">Light Mode</span>
 				</button>
 			</div>
 
@@ -20,21 +20,23 @@
 					<h1 class="title">Sordland Story Mode</h1>
 
 					<div class="data-section">
-						<h2>Current budget:</h2>
-						<p id="budget-data" class="data-display"></p>
+						<h2>Government Budget</h2>
+						<input
+							id="gov-budget"
+							class="editable-input"
+							type="number"
+							placeholder="edit here!"
+							min="0"
+						/>
 
-						<h2>New budget:</h2>
-						<p contenteditable="true" id="new-budget" class="editable">
-							Type your new budget here!
-						</p>
-
-						<h2>Current wealth:</h2>
-						<p id="wealth-data" class="data-display"></p>
-
-						<h2>New wealth:</h2>
-						<p contenteditable="true" id="new-wealth" class="editable">
-							Type your new wealth here!
-						</p>
+						<h2>Personal Wealth</h2>
+						<input
+							id="personal-wealth"
+							class="editable-input"
+							type="number"
+							placeholder="edit here!"
+							min="0"
+						/>
 					</div>
 				</div>
 
@@ -51,17 +53,17 @@
 									<div class="card-body">
 										<div class="form-group">
 											<label for="new-authority">New Authority</label>
-											<input type="text" id="new-authority" placeholder="Your new authority" />
+											<input type="number" min="0" id="new-authority" placeholder="edit here!" />
 											<div class="feedback">Please enter a number.</div>
 										</div>
 										<div class="form-group">
 											<label for="new-budget-rizia">New Budget</label>
-											<input type="text" id="new-budget-rizia" placeholder="Your new budget" />
+											<input type="number" min="0" id="new-budget-rizia" placeholder="edit here!" />
 											<div class="feedback">Please enter a number.</div>
 										</div>
 										<div class="form-group">
 											<label for="new-energy">New Energy</label>
-											<input type="text" id="new-energy" placeholder="Your new energy" />
+											<input type="number" min="0" id="new-energy" placeholder="edit here!" />
 											<div class="feedback">Please enter a number.</div>
 										</div>
 									</div>
@@ -75,17 +77,17 @@
 									<div class="card-body">
 										<div class="form-group">
 											<label for="new-authorityPT">New Authority</label>
-											<input type="text" id="new-authorityPT" placeholder="Your new authority PT" />
+											<input type="number" min="0" id="new-authorityPT" placeholder="edit here!" />
 											<div class="feedback">Please enter a number.</div>
 										</div>
 										<div class="form-group">
 											<label for="new-budgetPT">New Budget</label>
-											<input type="text" id="new-budgetPT" placeholder="Your new budget PT" />
+											<input type="number" min="0" id="new-budgetPT" placeholder="edit here!" />
 											<div class="feedback">Please enter a number.</div>
 										</div>
 										<div class="form-group">
 											<label for="new-energyPT">New Energy</label>
-											<input type="text" id="new-energyPT" placeholder="Your new energy PT" />
+											<input type="number" min="0" id="new-energyPT" placeholder="edit here!" />
 											<div class="feedback">Please enter a number.</div>
 										</div>
 									</div>
@@ -97,7 +99,6 @@
 			</div>
 
 			<div class="side-panel">
-				<h2>Tools</h2>
 				<div id="dropzone" class="dropzone">
 					<p>Drop your JSON file here or click to upload</p>
 					<input type="file" id="json-file-input" accept=".json" />

@@ -49,7 +49,7 @@ label {
 	margin-bottom: 5px;
 }
 
-input[type="text"],
+input[type="number"],
 input[type="file"] {
 	width: 100%;
 	padding: 10px;
@@ -160,16 +160,17 @@ h1 {
 	min-height: 35px;
 }
 
-.editable {
+.editable-input {
 	background-color: #fffde7;
 	padding: 10px;
 	border: 1px dashed #fbc02d;
 	border-radius: 6px;
 	margin-bottom: 20px;
 	outline: none;
+	width: 100%;
 }
 
-.editable:focus {
+.editable-input:focus {
 	border-color: #f9a825;
 	background-color: #fff9c4;
 }
@@ -254,9 +255,11 @@ h1 {
 }
 
 /* Dark Mode */
-body.dark-mode h1,
-body.dark-mode h2 {
+body.dark-mode h1 {
 	color: #f5e8d8;
+}
+body.dark-mode h2 {
+	color: #ff6f61;
 }
 
 body.dark-mode .card,
@@ -278,7 +281,7 @@ body.dark-mode .accordion-content {
 }
 
 body.dark-mode input,
-body.dark-mode p.editable {
+body.dark-mode input.editable-input {
 	background-color: #2c2c2c;
 	color: #eee;
 	border-color: #555;

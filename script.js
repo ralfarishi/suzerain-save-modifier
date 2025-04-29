@@ -19,8 +19,8 @@ document.getElementById("json-file-input").addEventListener("change", function (
 			if (isSordland) {
 				const budgetMatch = /\["BaseGame\.GovernmentBudget"\]=(\d+)/.exec(variablesString);
 				const wealthMatch = /\["BaseGame\.PersonalWealth"\]=(\d+)/.exec(variablesString);
-				document.getElementById("budget-data").innerHTML = budgetMatch ? budgetMatch[1] : "N/A";
-				document.getElementById("wealth-data").innerHTML = wealthMatch ? wealthMatch[1] : "N/A";
+				document.getElementById("gov-budget").value = budgetMatch ? budgetMatch[1] : "";
+				document.getElementById("personal-wealth").value = wealthMatch ? wealthMatch[1] : "";
 			}
 
 			// Cek untuk Rizia (DLC)
@@ -68,11 +68,14 @@ document.getElementById("download-button").addEventListener("click", function ()
 
 	// Update untuk Sordland
 	if (window.isSordland) {
-		const newBudget = document.getElementById("new-budget").innerHTML.trim();
-		const newWealth = document.getElementById("new-wealth").innerHTML.trim();
+		const govBudget = document.getElementById("gov-budget").value;
+		const personalWealth = document.getElementById("personal-wealth").value;
 		vs = vs
-			.replace(/\["BaseGame\.GovernmentBudget"\]=\d+/, `["BaseGame.GovernmentBudget"]=${newBudget}`)
-			.replace(/\["BaseGame\.PersonalWealth"\]=\d+/, `["BaseGame.PersonalWealth"]=${newWealth}`);
+			.replace(/\["BaseGame\.GovernmentBudget"\]=\d+/, `["BaseGame.GovernmentBudget"]=${govBudget}`)
+			.replace(
+				/\["BaseGame\.PersonalWealth"\]=\d+/,
+				`["BaseGame.PersonalWealth"]=${personalWealth}`
+			);
 	}
 
 	// Update untuk Rizia
@@ -112,7 +115,7 @@ document.getElementById("download-button").addEventListener("click", function ()
 
 	const a = document.createElement("a");
 	a.href = url;
-	a.download = "newSave.json";
+	a.download = "new-save.json";
 	document.body.appendChild(a);
 	a.click();
 
