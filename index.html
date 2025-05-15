@@ -17,84 +17,1001 @@
 
 			<div class="main-content">
 				<div class="container">
-					<h1 class="title">Sordland Story Mode</h1>
+					<h1 class="title">Sordland Story Mode (v3.1)</h1>
 
-					<div class="data-section">
-						<h2>Government Budget</h2>
-						<input
-							id="gov-budget"
-							class="editable-input"
-							type="number"
-							placeholder="edit here!"
-							min="0"
-						/>
-
-						<h2>Personal Wealth</h2>
-						<input
-							id="personal-wealth"
-							class="editable-input"
-							type="number"
-							placeholder="edit here!"
-							min="0"
-						/>
-					</div>
-				</div>
-
-				<hr />
-				<div class="container">
-					<h1>Kingdom of Rizia (DLC)</h1>
-
-					<form novalidate>
-						<div class="accordion">
-							<!-- Section 1 -->
-							<div class="accordion-item active">
-								<button class="accordion-toggle" type="button">Financial</button>
-								<div class="accordion-content">
-									<div class="card-body">
-										<div class="form-group">
-											<label for="new-authority">New Authority</label>
-											<input type="number" min="0" id="new-authority" placeholder="edit here!" />
-											<div class="feedback">Please enter a number.</div>
-										</div>
-										<div class="form-group">
-											<label for="new-budget-rizia">New Budget</label>
-											<input type="number" min="0" id="new-budget-rizia" placeholder="edit here!" />
-											<div class="feedback">Please enter a number.</div>
-										</div>
-										<div class="form-group">
-											<label for="new-energy">New Energy</label>
-											<input type="number" min="0" id="new-energy" placeholder="edit here!" />
-											<div class="feedback">Please enter a number.</div>
-										</div>
-									</div>
+					<!-- Money & Opinion -->
+					<section class="data-section">
+						<h2>Money & Opinion</h2>
+						<div class="row">
+							<div class="col-4">
+								<label for="gov-budget-min-hudstat">Gov. Budget Min (HUD Stat)</label>
+								<input
+									type="number"
+									id="gov-budget-min-hudstat"
+									placeholder="Enter value"
+									min="-20"
+									max="0"
+								/>
+							</div>
+							<div class="col-4">
+								<label for="gov-budget-max-hudstat">Gov. Budget Max (HUD Stat)</label>
+								<input
+									type="number"
+									id="gov-budget-max-hudstat"
+									placeholder="Enter value"
+									min="0"
+									max="50"
+								/>
+							</div>
+							<div class="col-4">
+								<label for="gov-budget">Government Budget</label>
+								<input type="number" id="gov-budget" placeholder="Enter value" />
+							</div>
+						</div>
+						<div class="row mt-2">
+							<div class="col-4">
+								<label for="personal-wealth-min-hudstat">Personal Wealth Min (HUD Stat)</label>
+								<input
+									type="number"
+									id="personal-wealth-min-hudstat"
+									placeholder="Enter value"
+									min="-20"
+									max="0"
+								/>
+							</div>
+							<div class="col-4">
+								<label for="personal-wealth-max-hudstat">Personal Wealth Max (HUD Stat)</label>
+								<input
+									type="number"
+									id="personal-wealth-max-hudstat"
+									placeholder="Enter value"
+									min="0"
+									max="50"
+								/>
+							</div>
+							<div class="col-4">
+								<label for="personal-wealth">Personal Wealth</label>
+								<input type="number" id="personal-wealth" placeholder="Enter value" />
+							</div>
+						</div>
+						<div class="row mt-2">
+							<div class="col-4">
+								<label for="public-opinion">Public's Opinion</label>
+								<input type="number" id="public-opinion" placeholder="Enter value" />
+							</div>
+							<div class="col-4">
+								<label for="bludish-opinion">Bludish's Opinion</label>
+								<input type="number" id="bludish-opinion" placeholder="Enter value" />
+							</div>
+							<div class="col-4">
+								<label for="country-unrest">Country Unrest</label>
+								<input type="number" id="country-unrest" placeholder="Enter value" />
+							</div>
+						</div>
+						<div class="row mt-2">
+							<div class="col-4">
+								<label for="frank-opinion">Frank's Opinion</label>
+								<input type="number" id="frank-opinion" placeholder="Enter value" />
+							</div>
+							<div class="col-4">
+								<label for="monica-opinion">Monica's Opinion</label>
+								<input type="number" id="monica-opinion" placeholder="Enter value" />
+							</div>
+							<div class="col-4">
+								<label for="lucian-opinion">Lucian's Opinion</label>
+								<input type="number" id="lucian-opinion" placeholder="Enter value" />
+							</div>
+						</div>
+						<div class="row mt-2">
+							<div class="col-6">
+								<label for="agnolia-negotiation">Agnolia Trade Negotiation</label>
+								<input type="number" id="agnolia-negotiation" placeholder="Enter value" min="0" />
+							</div>
+							<div class="col-6">
+								<label for="wehlen-negotiation">Wehlen Trade Negotiation</label>
+								<input type="number" id="wehlen-negotiation" placeholder="Enter value" min="0" />
+							</div>
+						</div>
+						<div class="row mt-2">
+							<div class="col-6">
+								<div class="checkbox-group">
+									<input type="checkbox" id="deana-loved" />
+									<label for="deana-loved">Deana Loved</label>
 								</div>
 							</div>
-
-							<!-- Section 2 -->
-							<div class="accordion-item active">
-								<button class="accordion-toggle" type="button">Financial (Per Turn)</button>
-								<div class="accordion-content">
-									<div class="card-body">
-										<div class="form-group">
-											<label for="new-authorityPT">New Authority</label>
-											<input type="number" min="0" id="new-authorityPT" placeholder="edit here!" />
-											<div class="feedback">Please enter a number.</div>
-										</div>
-										<div class="form-group">
-											<label for="new-budgetPT">New Budget</label>
-											<input type="number" min="0" id="new-budgetPT" placeholder="edit here!" />
-											<div class="feedback">Please enter a number.</div>
-										</div>
-										<div class="form-group">
-											<label for="new-energyPT">New Energy</label>
-											<input type="number" min="0" id="new-energyPT" placeholder="edit here!" />
-											<div class="feedback">Please enter a number.</div>
-										</div>
-									</div>
+							<div class="col-6">
+								<div class="checkbox-group">
+									<input type="checkbox" id="deana-opinion" />
+									<label for="deana-opinion">Deana Opinion</label>
 								</div>
 							</div>
 						</div>
-					</form>
+						<div class="row mt-2">
+							<div class="col-12">
+								<label class="section-label">Ewald's Stance</label>
+								<div class="radio-group">
+									<input
+										type="radio"
+										id="ewald-discontent"
+										name="ewald-stance"
+										value="Discontent"
+										hidden
+									/>
+									<label for="ewald-discontent" class="radio-btn">Discontent</label>
+
+									<input
+										type="radio"
+										id="ewald-neutral"
+										name="ewald-stance"
+										value="Neutral"
+										hidden
+									/>
+									<label for="ewald-neutral" class="radio-btn">Neutral</label>
+
+									<input
+										type="radio"
+										id="ewald-friendly"
+										name="ewald-stance"
+										value="Friendly"
+										hidden
+									/>
+									<label for="ewald-friendly" class="radio-btn">Friendly</label>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<hr />
+
+					<!-- Assembly & Court -->
+					<section class="data-section">
+						<h2>Assembly & Court Vote (Reform)</h2>
+						<div class="row">
+							<div class="col-6">
+								<div class="checkbox-group">
+									<input type="checkbox" id="usp-against" />
+									<label for="usp-against">USP Against Proposal</label>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="checkbox-group">
+									<input type="checkbox" id="albin-convinced-reform" />
+									<label for="albin-convinced-reform">Albin Convinced</label>
+								</div>
+							</div>
+						</div>
+						<div class="row mt-2">
+							<div class="col-6">
+								<div class="checkbox-group">
+									<input type="checkbox" id="gloria-convinced-reform" />
+									<label for="gloria-convinced-reform">Gloria Convinced</label>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="checkbox-group">
+									<input type="checkbox" id="isabel-convinced-reform" />
+									<label for="isabel-convinced-reform">Isabel Convinced</label>
+								</div>
+							</div>
+						</div>
+						<div class="row mt-2">
+							<div class="col-6">
+								<label for="assembly-vote-reform">Assembly Vote</label>
+								<input
+									type="number"
+									id="assembly-vote-reform"
+									placeholder="Enter value"
+									min="166"
+									max="200"
+								/>
+							</div>
+							<div class="col-6">
+								<label for="court-vote-reform">Court Vote</label>
+								<input
+									type="number"
+									id="court-vote-reform"
+									placeholder="Enter value"
+									min="0"
+									max="8"
+								/>
+							</div>
+						</div>
+					</section>
+
+					<hr />
+
+					<!-- Economy -->
+					<section class="data-section">
+						<h2>Economy</h2>
+						<div class="row">
+							<div class="col-6">
+								<div class="checkbox-group">
+									<input type="checkbox" id="superpower-trade-war" />
+									<label for="superpower-trade-war">Superpower Trade War</label>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="checkbox-group">
+									<input type="checkbox" id="black-tuesday" />
+									<label for="black-tuesday">Black Tuesday</label>
+								</div>
+							</div>
+						</div>
+						<div class="row mt-2">
+							<div class="col-6">
+								<div class="checkbox-group">
+									<input type="checkbox" id="markets-crash" />
+									<label for="markets-crash">Markets Crash</label>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="checkbox-group">
+									<input type="checkbox" id="global-trade-war" />
+									<label for="global-trade-war">Global Trade War</label>
+								</div>
+							</div>
+						</div>
+						<div class="row mt-2">
+							<div class="col-3">
+								<label for="economy-angland">Angland Economy</label>
+								<input type="number" id="economy-angland" placeholder="Enter value" min="-10" />
+							</div>
+							<div class="col-3 mt-3">
+								<div class="checkbox-group">
+									<input type="checkbox" id="angland-fish-export" />
+									<label for="angland-fish-export">Fish Export</label>
+								</div>
+							</div>
+							<div class="col-3 mt-3">
+								<div class="checkbox-group">
+									<input type="checkbox" id="angland-fish-export" />
+									<label for="angland-fish-export">Stable Economy</label>
+								</div>
+							</div>
+							<div class="col-3 mt-3">
+								<div class="checkbox-group">
+									<input type="checkbox" id="angland-fish-export" />
+									<label for="angland-fish-export">Lack Investment</label>
+								</div>
+							</div>
+						</div>
+						<div class="row mt-2">
+							<div class="col-3">
+								<label for="economy-bergia">Bergia Economy</label>
+								<input type="number" id="economy-bergia" placeholder="Enter value" min="-10" />
+							</div>
+							<div class="col-3 mt-3">
+								<div class="checkbox-group">
+									<input type="checkbox" id="bergia-agriculture-zone" />
+									<label for="bergia-agriculture-zone">Agriculture Zone</label>
+								</div>
+							</div>
+							<div class="col-3 mt-3">
+								<div class="checkbox-group">
+									<input type="checkbox" id="bergia-economic-stabilisation" />
+									<label for="bergia-economic-stabilisation">Stable Economy</label>
+								</div>
+							</div>
+							<div class="col-3 mt-3">
+								<div class="checkbox-group">
+									<input type="checkbox" id="bergia-economic-downturn" />
+									<label for="bergia-economic-downturn">Economy Down</label>
+								</div>
+							</div>
+						</div>
+						<div class="row mt-2">
+							<div class="col-3">
+								<label for="economy-lorren">Lorren Economy</label>
+								<input type="number" id="economy-lorren" placeholder="Enter value" min="-10" />
+							</div>
+							<div class="col-3 mt-3">
+								<div class="checkbox-group">
+									<input type="checkbox" id="lorren-production-trade-center" />
+									<label for="lorren-production-trade-center">Trade Center</label>
+								</div>
+							</div>
+							<div class="col-3 mt-3">
+								<div class="checkbox-group">
+									<input type="checkbox" id="lorren-economic-stabilisation" />
+									<label for="lorren-economic-stabilisation">Stable Economy</label>
+								</div>
+							</div>
+							<div class="col-3 mt-3">
+								<div class="checkbox-group">
+									<input type="checkbox" id="lorren-rustbelt" />
+									<label for="lorren-rustbelt">Rust Belt</label>
+								</div>
+							</div>
+						</div>
+						<div class="row mt-2">
+							<div class="col-3">
+								<label for="economy-gruni">Gruni Economy</label>
+								<input type="number" id="economy-gruni" placeholder="Enter value" min="-10" />
+							</div>
+							<div class="col-3 mt-3">
+								<div class="checkbox-group">
+									<input type="checkbox" id="gruni-light-tower" />
+									<label for="gruni-light-tower">Light Tower</label>
+								</div>
+							</div>
+							<div class="col-3 mt-3">
+								<div class="checkbox-group">
+									<input type="checkbox" id="gruni-lagging-behind" />
+									<label for="gruni-lagging-behind">Lagging Behind</label>
+								</div>
+							</div>
+							<div class="col-3 mt-3">
+								<div class="checkbox-group">
+									<input type="checkbox" id="gruni-maintaining-growth" />
+									<label for="gruni-maintaining-growth">Maintain Growth</label>
+								</div>
+							</div>
+						</div>
+						<div class="row mt-2">
+							<div class="col-12">
+								<label class="section-label">Gasom Industry</label>
+								<div class="radio-group">
+									<input
+										type="radio"
+										id="gasom-booming"
+										name="gasom-industry"
+										value="Booming"
+										hidden
+									/>
+									<label for="gasom-booming" class="radio-btn">Booming</label>
+
+									<input
+										type="radio"
+										id="gasom-downsized"
+										name="gasom-industry"
+										value="Downsized"
+										hidden
+									/>
+									<label for="gasom-downsized" class="radio-btn">Downsized</label>
+
+									<input
+										type="radio"
+										id="gasom-bankrupt"
+										name="gasom-industry"
+										value="Bankrupt"
+										hidden
+									/>
+									<label for="gasom-bankrupt" class="radio-btn">Bankrupt</label>
+								</div>
+							</div>
+						</div>
+						<div class="row mt-2">
+							<div class="col-12">
+								<label class="section-label">Transportation Situation</label>
+								<div class="radio-group">
+									<input
+										type="radio"
+										id="improved-transport"
+										name="transport-situation"
+										value="Improved"
+										hidden
+									/>
+									<label for="improved-transport" class="radio-btn">Improved</label>
+
+									<input
+										type="radio"
+										id="weak-transport"
+										name="transport-situation"
+										value="Weak"
+										hidden
+									/>
+									<label for="weak-transport" class="radio-btn">Weak</label>
+								</div>
+							</div>
+						</div>
+						<div class="row mt-2">
+							<div class="col-12">
+								<label class="section-label">Tourism Situation</label>
+								<div class="radio-group">
+									<input
+										type="radio"
+										id="tourism-decline"
+										name="tourism-situation"
+										value="Declining"
+										hidden
+									/>
+									<label for="tourism-decline" class="radio-btn">Declined</label>
+
+									<input
+										type="radio"
+										id="tourism-booming"
+										name="tourism-situation"
+										value="Booming"
+										hidden
+									/>
+									<label for="tourism-booming" class="radio-btn">Booming</label>
+
+									<input
+										type="radio"
+										id="tourism-average"
+										name="tourism-situation"
+										value="Average"
+										hidden
+									/>
+									<label for="tourism-average" class="radio-btn">Average</label>
+								</div>
+							</div>
+						</div>
+						<div class="row mt-2">
+							<div class="col-12">
+								<label class="section-label">Trade Situation</label>
+								<div class="radio-group">
+									<input
+										type="radio"
+										id="trade-decreased"
+										name="trade-situation"
+										value="Decreased"
+										hidden
+									/>
+									<label for="trade-decreased" class="radio-btn">Decreased</label>
+
+									<input
+										type="radio"
+										id="trade-increased"
+										name="trade-situation"
+										value="Increase"
+										hidden
+									/>
+									<label for="trade-increased" class="radio-btn">Increase</label>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<hr />
+
+					<!-- Game Condition -->
+					<section class="data-section">
+						<h2>Turn 1 Condition</h2>
+
+						<div class="row">
+							<div class="col-12">
+								<label class="section-label">Infrastructure Project</label>
+								<div class="radio-group">
+									<input
+										type="radio"
+										id="railway-project"
+										name="infrastructure-project"
+										value="Railway"
+										hidden
+									/>
+									<label for="railway-project" class="radio-btn">L-1 Railway</label>
+
+									<input
+										type="radio"
+										id="highway-project"
+										name="infrastructure-project"
+										value="Highway"
+										hidden
+									/>
+									<label for="highway-project" class="radio-btn">H-3 Highway</label>
+								</div>
+							</div>
+						</div>
+
+						<h2>Turn 4 Condition</h2>
+						<div class="row">
+							<div class="col-6">
+								<div class="checkbox-group">
+									<input type="checkbox" id="convince-gloria" />
+									<label for="convince-gloria">Convince Gloria</label>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="checkbox-group">
+									<input type="checkbox" id="convince-albin" />
+									<label for="convince-albin">Convince Albin</label>
+								</div>
+							</div>
+						</div>
+
+						<h2>Turn 6 Condition</h2>
+						<div class="row mt-2">
+							<div class="col-12">
+								<label class="section-label">Military Expansion</label>
+								<div class="radio-group">
+									<input
+										type="radio"
+										id="army-expansion"
+										name="military-expansion"
+										value="Army"
+										hidden
+									/>
+									<label for="army-expansion" class="radio-btn">Army</label>
+
+									<input
+										type="radio"
+										id="navy-expansion"
+										name="military-expansion"
+										value="Navy"
+										hidden
+									/>
+									<label for="navy-expansion" class="radio-btn">Navy</label>
+
+									<input
+										type="radio"
+										id="airforce-expansion"
+										name="military-expansion"
+										value="Airforce"
+										hidden
+									/>
+									<label for="airforce-expansion" class="radio-btn">Airforce</label>
+								</div>
+							</div>
+						</div>
+						<div class="row mt-2">
+							<div class="col-12">
+								<label class="section-label">Military Modernisation</label>
+								<div class="radio-group">
+									<input
+										type="radio"
+										id="army-modernisation"
+										name="military-modernisation"
+										value="Army"
+										hidden
+									/>
+									<label for="army-modernisation" class="radio-btn">Army</label>
+
+									<input
+										type="radio"
+										id="navy-modernisation"
+										name="military-modernisation"
+										value="Navy"
+										hidden
+									/>
+									<label for="navy-modernisation" class="radio-btn">Navy</label>
+
+									<input
+										type="radio"
+										id="airforce-modernisation"
+										name="military-modernisation"
+										value="Airforce"
+										hidden
+									/>
+									<label for="airforce-modernisation" class="radio-btn">Airforce</label>
+								</div>
+							</div>
+						</div>
+
+						<h2>Turn 7 Condition</h2>
+						<div class="row mt-2">
+							<div class="col-4">
+								<label for="isabel-opinion">Isabel Opinion</label>
+								<input type="number" id="isabel-opinion" placeholder="Enter value" min="0" />
+							</div>
+							<div class="col-4 mt-3">
+								<div class="checkbox-group">
+									<input type="checkbox" id="convince-isabel" />
+									<label for="convince-isabel">Convince Isabel</label>
+								</div>
+							</div>
+							<div class="col-4 mt-3">
+								<div class="checkbox-group">
+									<input type="checkbox" id="convince-heron" />
+									<label for="convince-heron">Convince Heron</label>
+								</div>
+							</div>
+						</div>
+
+						<h2>Turn 10</h2>
+						<div class="row mt-2">
+							<div class="col-4">
+								<label for="resignations-number">Resignations Number</label>
+								<input
+									type="number"
+									id="resignations-number"
+									placeholder="Enter value"
+									min="0"
+									max="8"
+								/>
+							</div>
+							<div class="col-4 mt-3">
+								<div class="checkbox-group">
+									<input type="checkbox" id="rumburg-war-plans" />
+									<label for="rumburg-war-plans">Rumburg War Plans</label>
+								</div>
+							</div>
+							<div class="col-4 mt-3">
+								<div class="checkbox-group">
+									<input type="checkbox" id="rumburg-war-speech" />
+									<label for="rumburg-war-speech">Rumburg War Speech</label>
+								</div>
+							</div>
+						</div>
+
+						<h2>Turn 11</h2>
+						<div class="row mt-2">
+							<div class="col-12">
+								<label class="section-label">Rumburg War Condition</label>
+								<div class="radio-group">
+									<input
+										type="radio"
+										id="rumburg-war-lost"
+										name="rumburg-war"
+										value="Rumburg War Lost"
+										hidden
+									/>
+									<label for="rumburg-war-lost" class="radio-btn">Rumburg War Lost</label>
+
+									<input
+										type="radio"
+										id="rumburg-war-win"
+										name="rumburg-war"
+										value="Rumburg War Win"
+										hidden
+									/>
+									<label for="rumburg-war-win" class="radio-btn">Rumburg War Win</label>
+								</div>
+							</div>
+						</div>
+						<div class="row mt-2">
+							<div class="col-6">
+								<div class="checkbox-group">
+									<input type="checkbox" id="world-war" />
+									<label for="world-war">World War</label>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="checkbox-group">
+									<input type="checkbox" id="coup-d-etat" />
+									<label for="coup-d-etat">Coup d'état</label>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<hr />
+
+					<!-- Collectible Item -->
+					<section class="data-section">
+						<h2>Collectible Item</h2>
+						<div class="row">
+							<div class="col-3">
+								<div class="checkbox-group">
+									<input type="checkbox" id="anrica-trophy" />
+									<label for="anrica-trophy">Anrica Trophy</label>
+								</div>
+							</div>
+							<div class="col-3">
+								<div class="form-group">
+									<input
+										type="datetime-local"
+										id="anrica-trophy-date"
+										class="styled-input date-field"
+										placeholder="dd/mm/yyyy hh:mm AM/PM"
+										disabled
+									/>
+								</div>
+							</div>
+
+							<div class="col-3">
+								<div class="checkbox-group">
+									<input type="checkbox" id="armandine-radio" />
+									<label for="armandine-radio">Armand. Radio</label>
+								</div>
+							</div>
+							<div class="col-3">
+								<div class="form-group">
+									<input
+										type="datetime-local"
+										id="armandine-radio-date"
+										class="styled-input date-field"
+										placeholder="dd/mm/yyyy hh:mm AM/PM"
+										disabled
+									/>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-3">
+								<div class="checkbox-group">
+									<input type="checkbox" id="aschraf-candle" />
+									<label for="aschraf-candle">Aschraf Candle</label>
+								</div>
+							</div>
+							<div class="col-3">
+								<div class="form-group">
+									<input
+										type="datetime-local"
+										id="aschraf-candle-date"
+										class="styled-input date-field"
+										placeholder="dd/mm/yyyy hh:mm AM/PM"
+										disabled
+									/>
+								</div>
+							</div>
+
+							<div class="col-3">
+								<div class="checkbox-group">
+									<input type="checkbox" id="car-key" />
+									<label for="car-key">Car Key</label>
+								</div>
+							</div>
+							<div class="col-3">
+								<div class="form-group">
+									<input
+										type="datetime-local"
+										id="car-key-date"
+										class="styled-input date-field"
+										placeholder="dd/mm/yyyy hh:mm AM/PM"
+										disabled
+									/>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-3">
+								<div class="checkbox-group">
+									<input type="checkbox" id="ceremonial-scissors" />
+									<label for="ceremonial-scissors">C. Scissors</label>
+								</div>
+							</div>
+							<div class="col-3">
+								<div class="form-group">
+									<input
+										type="datetime-local"
+										id="ceremonial-scissors-date"
+										class="styled-input date-field"
+										placeholder="dd/mm/yyyy hh:mm AM/PM"
+										disabled
+									/>
+								</div>
+							</div>
+
+							<div class="col-3">
+								<div class="checkbox-group">
+									<input type="checkbox" id="cigar-box" />
+									<label for="cigar-box">Cigar Box</label>
+								</div>
+							</div>
+							<div class="col-3">
+								<div class="form-group">
+									<input
+										type="datetime-local"
+										id="cigar-box-date"
+										class="styled-input date-field"
+										placeholder="dd/mm/yyyy hh:mm AM/PM"
+										disabled
+									/>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-3">
+								<div class="checkbox-group">
+									<input type="checkbox" id="dagger" />
+									<label for="dagger">Dagger</label>
+								</div>
+							</div>
+							<div class="col-3">
+								<div class="form-group">
+									<input
+										type="datetime-local"
+										id="dagger-date"
+										class="styled-input date-field"
+										placeholder="dd/mm/yyyy hh:mm AM/PM"
+										disabled
+									/>
+								</div>
+							</div>
+
+							<div class="col-3">
+								<div class="checkbox-group">
+									<input type="checkbox" id="goat-statue" />
+									<label for="goat-statue">Goat Statue</label>
+								</div>
+							</div>
+							<div class="col-3">
+								<div class="form-group">
+									<input
+										type="datetime-local"
+										id="goat-statue-date"
+										class="styled-input date-field"
+										placeholder="dd/mm/yyyy hh:mm AM/PM"
+										disabled
+									/>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-3">
+								<div class="checkbox-group">
+									<input type="checkbox" id="gun" />
+									<label for="gun">Gun</label>
+								</div>
+							</div>
+							<div class="col-3">
+								<div class="form-group">
+									<input
+										type="datetime-local"
+										id="gun-date"
+										class="styled-input date-field"
+										placeholder="dd/mm/yyyy hh:mm AM/PM"
+										disabled
+									/>
+								</div>
+							</div>
+
+							<div class="col-3">
+								<div class="checkbox-group">
+									<input type="checkbox" id="headphones" />
+									<label for="headphones">Headphones</label>
+								</div>
+							</div>
+							<div class="col-3">
+								<div class="form-group">
+									<input
+										type="datetime-local"
+										id="headphones-date"
+										class="styled-input date-field"
+										placeholder="dd/mm/yyyy hh:mm AM/PM"
+										disabled
+									/>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-3">
+								<div class="checkbox-group">
+									<input type="checkbox" id="kesaro-lighter" />
+									<label for="kesaro-lighter">Kesaro Lighter</label>
+								</div>
+							</div>
+							<div class="col-3">
+								<div class="form-group">
+									<input
+										type="datetime-local"
+										id="kesaro-lighter-date"
+										class="styled-input date-field"
+										placeholder="dd/mm/yyyy hh:mm AM/PM"
+										disabled
+									/>
+								</div>
+							</div>
+
+							<div class="col-3">
+								<div class="checkbox-group">
+									<input type="checkbox" id="photo-frame" />
+									<label for="photo-frame">Photo Frame</label>
+								</div>
+							</div>
+							<div class="col-3">
+								<div class="form-group">
+									<input
+										type="datetime-local"
+										id="photo-frame-date"
+										class="styled-input date-field"
+										placeholder="dd/mm/yyyy hh:mm AM/PM"
+										disabled
+									/>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-3">
+								<div class="checkbox-group">
+									<input type="checkbox" id="pocket-watch" />
+									<label for="pocket-watch">Pocket Watch</label>
+								</div>
+							</div>
+							<div class="col-3">
+								<div class="form-group">
+									<input
+										type="datetime-local"
+										id="pocket-watch-date"
+										class="styled-input date-field"
+										placeholder="dd/mm/yyyy hh:mm AM/PM"
+										disabled
+									/>
+								</div>
+							</div>
+
+							<div class="col-3">
+								<div class="checkbox-group">
+									<input type="checkbox" id="poem-book" />
+									<label for="poem-book">Poem Book</label>
+								</div>
+							</div>
+							<div class="col-3">
+								<div class="form-group">
+									<input
+										type="datetime-local"
+										id="poem-book-date"
+										class="styled-input date-field"
+										placeholder="dd/mm/yyyy hh:mm AM/PM"
+										disabled
+									/>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-3">
+								<div class="checkbox-group">
+									<input type="checkbox" id="underhall-trophy" />
+									<label for="underhall-trophy">U. Trophy</label>
+								</div>
+							</div>
+							<div class="col-3">
+								<div class="form-group">
+									<input
+										type="datetime-local"
+										id="underhall-trophy-date"
+										class="styled-input date-field"
+										placeholder="dd/mm/yyyy hh:mm AM/PM"
+										disabled
+									/>
+								</div>
+							</div>
+
+							<div class="col-3">
+								<div class="checkbox-group">
+									<input type="checkbox" id="usp-brooch" />
+									<label for="usp-brooch">USP Brooch</label>
+								</div>
+							</div>
+							<div class="col-3">
+								<div class="form-group">
+									<input
+										type="datetime-local"
+										id="usp-brooch-date"
+										class="styled-input date-field"
+										placeholder="dd/mm/yyyy hh:mm AM/PM"
+										disabled
+									/>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-3">
+								<div class="checkbox-group">
+									<input type="checkbox" id="whiskey-bottle" />
+									<label for="whiskey-bottle">Whiskey Bottle</label>
+								</div>
+							</div>
+							<div class="col-3">
+								<div class="form-group">
+									<input
+										type="datetime-local"
+										id="whiskey-bottle-date"
+										class="styled-input date-field"
+										placeholder="dd/mm/yyyy hh:mm AM/PM"
+										disabled
+									/>
+								</div>
+							</div>
+
+							<div class="col-3">
+								<div class="checkbox-group">
+									<input type="checkbox" id="wine-bottle" />
+									<label for="wine-bottle">Wine Bottle</label>
+								</div>
+							</div>
+							<div class="col-3">
+								<div class="form-group">
+									<input
+										type="datetime-local"
+										id="wine-bottle-date"
+										class="styled-input date-field"
+										placeholder="dd/mm/yyyy hh:mm AM/PM"
+										disabled
+									/>
+								</div>
+							</div>
+						</div>
+					</section>
 				</div>
 			</div>
 
@@ -111,25 +1028,53 @@
 		</div>
 
 		<!-- main idea sources -->
-		<div class="shoutout-container">
-			<button id="shoutout-toggle" class="shoutout-main-btn">
-				<!-- icon here -->
-			</button>
-
-			<div id="shoutout-buttons" class="shoutout-group hidden">
-				<a
-					href="https://github.com/stevenhoekerd/Magic-Symon/blob/main/MagicSymon.html"
-					target="_blank"
-					class="shoutout-btn"
+		<div class="shoutout-wrapper">
+			<a
+				href="https://github.com/ralfarishi/suzerain-save-modifier"
+				target="_blank"
+				class="shoutout-left-btn"
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					x="0px"
+					y="0px"
+					width="28"
+					height="28"
+					viewBox="0 0 50 50"
 				>
-					Sordland
-				</a>
-				<a href="https://trolledd.github.io/suzerain/" target="_blank" class="shoutout-btn">
-					Kingdom of Rizia
-				</a>
+					<path
+						d="M17.791,46.836C18.502,46.53,19,45.823,19,45v-5.4c0-0.197,0.016-0.402,0.041-0.61C19.027,38.994,19.014,38.997,19,39 c0,0-3,0-3.6,0c-1.5,0-2.8-0.6-3.4-1.8c-0.7-1.3-1-3.5-2.8-4.7C8.9,32.3,9.1,32,9.7,32c0.6,0.1,1.9,0.9,2.7,2c0.9,1.1,1.8,2,3.4,2 c2.487,0,3.82-0.125,4.622-0.555C21.356,34.056,22.649,33,24,33v-0.025c-5.668-0.182-9.289-2.066-10.975-4.975 c-3.665,0.042-6.856,0.405-8.677,0.707c-0.058-0.327-0.108-0.656-0.151-0.987c1.797-0.296,4.843-0.647,8.345-0.714 c-0.112-0.276-0.209-0.559-0.291-0.849c-3.511-0.178-6.541-0.039-8.187,0.097c-0.02-0.332-0.047-0.663-0.051-0.999 c1.649-0.135,4.597-0.27,8.018-0.111c-0.079-0.5-0.13-1.011-0.13-1.543c0-1.7,0.6-3.5,1.7-5c-0.5-1.7-1.2-5.3,0.2-6.6 c2.7,0,4.6,1.3,5.5,2.1C21,13.4,22.9,13,25,13s4,0.4,5.6,1.1c0.9-0.8,2.8-2.1,5.5-2.1c1.5,1.4,0.7,5,0.2,6.6c1.1,1.5,1.7,3.2,1.6,5 c0,0.484-0.045,0.951-0.11,1.409c3.499-0.172,6.527-0.034,8.204,0.102c-0.002,0.337-0.033,0.666-0.051,0.999 c-1.671-0.138-4.775-0.28-8.359-0.089c-0.089,0.336-0.197,0.663-0.325,0.98c3.546,0.046,6.665,0.389,8.548,0.689 c-0.043,0.332-0.093,0.661-0.151,0.987c-1.912-0.306-5.171-0.664-8.879-0.682C35.112,30.873,31.557,32.75,26,32.969V33 c2.6,0,5,3.9,5,6.6V45c0,0.823,0.498,1.53,1.209,1.836C41.37,43.804,48,35.164,48,25C48,12.318,37.683,2,25,2S2,12.318,2,25 C2,35.164,8.63,43.804,17.791,46.836z"
+					></path>
+				</svg>
+			</a>
+
+			<div class="shoutout-container">
+				<button id="shoutout-toggle" class="shoutout-main-btn">
+					<!-- icon here -->
+				</button>
+
+				<div id="shoutout-buttons" class="shoutout-group hidden">
+					<a
+						href="https://github.com/stevenhoekerd/Magic-Symon/blob/main/MagicSymon.html"
+						target="_blank"
+						class="shoutout-btn"
+					>
+						Sordland
+					</a>
+					<a
+						href="https://steamcommunity.com/sharedfiles/filedetails/?id=3341333208"
+						target="_blank"
+						class="shoutout-btn"
+					>
+						Game Variables
+					</a>
+					<a href="https://trolledd.github.io/suzerain/" target="_blank" class="shoutout-btn">
+						Kingdom of Rizia
+					</a>
+				</div>
 			</div>
 		</div>
 	</body>
 
-	<script src="script.js"></script>
+	<script type="module" src="script.js"></script>
 </html>
