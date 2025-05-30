@@ -2,8 +2,8 @@ import { dataMappings } from "./data/data.js";
 
 import { setupThemeToggle } from "./utils/theme.js";
 import { dragNDrop } from "./utils/drag-n-drop.js";
-import { shoutOut } from "./utils/shoutout.js";
 import { showAlert } from "./utils/show-alert.js";
+import { tabSwitch } from "./utils/tab-switch.js";
 
 function convertToDatetimeLocal(dateStr) {
 	if (!dateStr) return "";
@@ -144,15 +144,15 @@ document.getElementById("json-file-input").addEventListener("change", function (
 			window.modifiedData = jsonData;
 			window.variablesString = variablesString;
 
-			window.isSordland = /BaseGame\.GovernmentBudget/.test(variablesString);
+			const isValidFile = /GameCondition\.Turn01_A_PoliticalOverview/.test(variablesString);
 
-			if (window.isSordland) {
-				parseFieldsFromSave(variablesString);
-				document.getElementById("download-button").removeAttribute("disabled");
-			}
+			if (!isValidFile) return showAlert("This is not a Suzerain save file");
+
+			parseFieldsFromSave(variablesString);
+			document.getElementById("download-button").removeAttribute("disabled");
 		} catch (err) {
 			console.error("Error parsing file:", err);
-			showAlert("Only accept json file format");
+			showAlert("Only accept JSON file format");
 		}
 	};
 
@@ -232,7 +232,7 @@ document.getElementById("download-button").addEventListener("click", function ()
 document.addEventListener("DOMContentLoaded", () => {
 	setupThemeToggle();
 	dragNDrop();
-	shoutOut();
+	tabSwitch();
 
 	setupBooleanDateToggle();
 });

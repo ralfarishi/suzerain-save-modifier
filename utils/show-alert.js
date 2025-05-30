@@ -5,7 +5,7 @@ export function showAlert(message) {
 		alertBox.id = "custom-alert";
 		Object.assign(alertBox.style, {
 			position: "fixed",
-			top: "20px",
+			top: "100px",
 			left: "50%",
 			transform: "translateX(-50%)",
 			background: "#f44336",
@@ -20,7 +20,22 @@ export function showAlert(message) {
 	}
 	alertBox.textContent = message;
 	alertBox.style.display = "block";
+
+	alertBox.classList.remove("fade-out-up", "fade-out-down");
+
+	alertBox.classList.add("fade-in-down");
+
 	setTimeout(() => {
-		alertBox.style.display = "none";
-	}, 3500);
+		alertBox.classList.remove("fade-in-down");
+		alertBox.classList.add("fade-out-up");
+
+		alertBox.addEventListener(
+			"animationend",
+			() => {
+				alertBox.style.display = "none";
+				alertBox.classList.remove("fade-out-up");
+			},
+			{ once: true }
+		);
+	}, 2500);
 }
