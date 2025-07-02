@@ -100,12 +100,23 @@ function parseFieldsFromSave(variablesString) {
 			const input = document.getElementById(field.id);
 			if (input) {
 				input.value = match ? match[1] : "";
+
+				if (!window.defaultValues) window.defaultValues = {};
+				if (!window.defaultValues[field.tab]) window.defaultValues[field.tab] = {};
+				window.defaultValues[field.tab][field.id] = input.value;
+
 				input.addEventListener("blur", () => validateFieldRange(input, field));
 			}
 		} else if (field.type === "checkbox") {
 			const match = new RegExp(`\\[\\\"${field.key}\\\"]=(true|false)`).exec(variablesString);
 			const checkbox = document.getElementById(field.id);
-			if (checkbox) checkbox.checked = match ? match[1] === "true" : false;
+			if (checkbox) {
+				checkbox.checked = match ? match[1] === "true" : false;
+
+				if (!window.defaultValues) window.defaultValues = {};
+				if (!window.defaultValues[field.tab]) window.defaultValues[field.tab] = {};
+				window.defaultValues[field.tab][field.id] = checkbox.checked;
+			}
 		} else if (field.type === "boolean-date") {
 			const boolMatch = new RegExp(`\\[\\\"${field.key}\\\"]=(true|false)`).exec(variablesString);
 			const dateMatch = new RegExp(`\\[\\\"${field.dateKey}\\\"\\]=\\\"(.*?)\\\"`).exec(
@@ -149,6 +160,10 @@ document.getElementById("json-file-input").addEventListener("change", function (
 			if (!isValidFile) return showAlert("This is not a Suzerain save file");
 
 			parseFieldsFromSave(variablesString);
+
+			document.querySelectorAll(".value-toggle-group .value-btn").forEach((btn) => {
+				btn.removeAttribute("disabled");
+			});
 			document.getElementById("download-button").removeAttribute("disabled");
 		} catch (err) {
 			console.error("Error parsing file:", err);
@@ -227,6 +242,60 @@ document.getElementById("download-button").addEventListener("click", function ()
 
 	URL.revokeObjectURL(url);
 	a.remove();
+});
+
+document.querySelectorAll(".checkbox-group").forEach((group) => {
+	group.addEventListener("click", function (e) {
+		// Jangan trigger kalau yang diklik itu input atau label (biar gak dobel)
+		if (e.target.tagName.toLowerCase() !== "input" && e.target.tagName.toLowerCase() !== "label") {
+			const checkbox = group.querySelector('input[type="checkbox"]');
+			if (checkbox) checkbox.checked = !checkbox.checked;
+		}
+	});
+});
+
+document.querySelectorAll(".value-toggle-group .value-btn").forEach((btn) => {
+	btn.addEventListener("click", () => {
+		const tabId = btn.closest(".tab-content")?.id;
+		const tab = tabId?.replace("-tab", "");
+
+		const action = btn.dataset.type;
+
+		if (!tab) return;
+
+		if (action === "reset" && !window.defaultValues?.[tab]) {
+			showAlert("File not loaded!");
+			return;
+		}
+
+		for (const field of dataMappings) {
+			if (field.tab !== tab) continue;
+
+			const input = document.getElementById(field.id);
+			if (!input) continue;
+
+			// for number
+			if (field.type === "number") {
+				if (action === "max" && field.max !== undefined) {
+					input.value = field.max;
+				} else if (action === "min" && field.min !== undefined) {
+					input.value = field.min;
+				} else if (action === "reset" && window.defaultValues?.[tab]?.[field.id] !== undefined) {
+					input.value = window.defaultValues[tab][field.id];
+				}
+				validateFieldRange(input, field);
+			}
+
+			// for checkbox
+			if (field.type === "checkbox") {
+				if (action === "check") input.checked = true;
+				else if (action === "uncheck") input.checked = false;
+				else if (action === "reset" && window.defaultValues?.[tab]?.[field.id] !== undefined) {
+					input.checked = window.defaultValues[tab][field.id];
+				}
+			}
+		}
+	});
 });
 
 document.addEventListener("DOMContentLoaded", () => {

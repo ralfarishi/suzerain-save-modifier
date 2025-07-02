@@ -39,8 +39,12 @@
 			<div class="main-content">
 				<div class="container">
 					<div class="tab-container">
-						<div class="tab-content active" id="money-assembly-tab">
-							<!-- Money & Opinion -->
+						<div class="tab-content active" id="money-opinion-tab">
+							<div class="value-toggle-group">
+								<button class="value-btn" data-type="reset" disabled>Reset</button>
+								<button class="value-btn" data-type="max" disabled>Set Number to Max. Value</button>
+								<button class="value-btn" data-type="min" disabled>Set Number to Min. Value</button>
+							</div>
 							<section class="data-section">
 								<h2>Money & Opinion</h2>
 								<div class="row">
@@ -191,34 +195,45 @@
 									</div>
 								</div>
 							</section>
+						</div>
 
-							<hr />
-
-							<!-- Assembly & Court -->
+						<div class="tab-content" id="assembly-court-tab">
 							<section class="data-section">
 								<h2>Assembly & Court Vote (Reform)</h2>
 								<div class="row">
-									<div class="col-6">
+									<div class="col-4">
 										<div class="checkbox-group">
 											<input type="checkbox" id="usp-against" />
 											<label for="usp-against">USP Against Proposal</label>
 										</div>
 									</div>
-									<div class="col-6">
+									<div class="col-4">
+										<div class="checkbox-group">
+											<input type="checkbox" id="usp-obstructionist" />
+											<label for="usp-obstructionist">USP Obstructionist</label>
+										</div>
+									</div>
+									<div class="col-4">
+										<div class="checkbox-group">
+											<input type="checkbox" id="enable-congress" />
+											<label for="enable-congress">Enable Congress</label>
+										</div>
+									</div>
+								</div>
+								<div class="row mt-2">
+									<div class="col-4">
 										<div class="checkbox-group">
 											<input type="checkbox" id="albin-convinced-reform" />
 											<label for="albin-convinced-reform">Albin Convinced</label>
 										</div>
 									</div>
-								</div>
-								<div class="row mt-2">
-									<div class="col-6">
+									<div class="col-4">
 										<div class="checkbox-group">
 											<input type="checkbox" id="gloria-convinced-reform" />
 											<label for="gloria-convinced-reform">Gloria Convinced</label>
 										</div>
 									</div>
-									<div class="col-6">
+									<div class="col-4">
 										<div class="checkbox-group">
 											<input type="checkbox" id="isabel-convinced-reform" />
 											<label for="isabel-convinced-reform">Isabel Convinced</label>
@@ -250,10 +265,167 @@
 							</section>
 						</div>
 
+						<div class="tab-content" id="presidential-decrees-tab">
+							<div class="value-toggle-group">
+								<button class="value-btn" data-type="reset" disabled>Reset</button>
+								<button class="value-btn" data-type="check" disabled>Check All</button>
+								<button class="value-btn" data-type="uncheck" disabled>Uncheck All</button>
+							</div>
+							<section class="data-section">
+								<h2>Presidential Decrees</h2>
+								<div class="row">
+									<div class="col-4">
+										<div class="checkbox-group">
+											<input type="checkbox" id="amnesty-for-prisoners" />
+											<label for="amnesty-for-prisoners">Prisoners Amnesty</label>
+										</div>
+									</div>
+									<div class="col-4">
+										<div class="checkbox-group">
+											<input type="checkbox" id="de-sollinisation" />
+											<label for="de-sollinisation">Desollinisation</label>
+										</div>
+									</div>
+									<div class="col-4">
+										<div class="checkbox-group">
+											<input type="checkbox" id="fair-trade-commission" />
+											<label for="fair-trade-commission">Fair Trade Commission</label>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-4">
+										<div class="checkbox-group">
+											<input type="checkbox" id="gender-equality" />
+											<label for="gender-equality">Gender Equality</label>
+										</div>
+									</div>
+									<div class="col-4">
+										<div class="checkbox-group">
+											<input type="checkbox" id="private-prisons" />
+											<label for="private-prisons">Private Prisons</label>
+										</div>
+									</div>
+									<div class="col-4">
+										<div class="checkbox-group">
+											<input type="checkbox" id="rural-education" />
+											<label for="rural-education">Rural Education</label>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-4">
+										<div class="checkbox-group">
+											<input type="checkbox" id="capital-punishment" />
+											<label for="capital-punishment">Capital Punishment</label>
+										</div>
+									</div>
+									<div class="col-4">
+										<div class="checkbox-group">
+											<input type="checkbox" id="gun-rights" />
+											<label for="gun-rights">Gun Rights</label>
+										</div>
+									</div>
+									<div class="col-4">
+										<div class="checkbox-group">
+											<input type="checkbox" id="purge-general" />
+											<label for="purge-general">Purge General</label>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-4">
+										<div class="checkbox-group">
+											<input type="checkbox" id="relocate-to-rural" />
+											<label for="relocate-to-rural">Relocate to Rural</label>
+										</div>
+									</div>
+									<div class="col-4">
+										<div class="checkbox-group">
+											<input type="checkbox" id="remove-bank-independence" />
+											<label for="remove-bank-independence">Remove Bank Independence</label>
+										</div>
+									</div>
+									<div class="col-4">
+										<div class="checkbox-group">
+											<input type="checkbox" id="remove-religious-symbols" />
+											<label for="remove-religious-symbols">Remove Religious Symbols</label>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-4">
+										<div class="checkbox-group">
+											<input type="checkbox" id="free-medicine" />
+											<label for="free-medicine">Free Medicine</label>
+										</div>
+									</div>
+									<div class="col-4">
+										<div class="checkbox-group">
+											<input type="checkbox" id="lower-retirement-age" />
+											<label for="lower-retirement-age">Lower Retirement Age</label>
+										</div>
+									</div>
+									<div class="col-4">
+										<div class="checkbox-group">
+											<input type="checkbox" id="sordish-media-controll" />
+											<label for="sordish-media-controll">Sordish Media Controll</label>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-12">
+										<label class="section-label">Sordish Media</label>
+										<div class="radio-group">
+											<input
+												type="radio"
+												id="media-controlled"
+												name="sordish-media"
+												value="Media Controlled"
+												hidden
+											/>
+											<label for="media-controlled" class="radio-btn">Media Controlled</label>
+
+											<input
+												type="radio"
+												id="media-independence"
+												name="sordish-media"
+												value="Media Independence"
+												hidden
+											/>
+											<label for="media-independence" class="radio-btn">Media Independence</label>
+										</div>
+									</div>
+								</div>
+							</section>
+						</div>
+
 						<div class="tab-content" id="economy-tab">
 							<section class="data-section">
 								<h2>Economy</h2>
 								<div class="row">
+									<div class="col-6">
+										<label for="trade-amount">Trade Amount</label>
+										<input
+											type="number"
+											id="trade-amount"
+											placeholder="Enter value"
+											min="0"
+											max="100"
+										/>
+									</div>
+									<div class="col-6">
+										<label for="economic-reliance">Economic Reliance</label>
+										<input
+											type="number"
+											id="economic-reliance"
+											placeholder="Enter value"
+											min="0"
+											max="100"
+										/>
+									</div>
+								</div>
+								<div class="row mt-2">
 									<div class="col-6">
 										<div class="checkbox-group">
 											<input type="checkbox" id="superpower-trade-war" />
@@ -281,27 +453,59 @@
 										</div>
 									</div>
 								</div>
-								<div class="row mt-2">
+
+								<h2 class="mt-2">Policy</h2>
+								<div class="row">
+									<div class="col-6">
+										<div class="checkbox-group">
+											<input type="checkbox" id="agnland-reginvest-policy" />
+											<label for="agnland-reginvest-policy">Agnland Regional Investment</label>
+										</div>
+									</div>
+									<div class="col-6">
+										<div class="checkbox-group">
+											<input type="checkbox" id="bergia-reginvest-policy" />
+											<label for="bergia-reginvest-policy">Bergia Regional Investment</label>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-6">
+										<div class="checkbox-group">
+											<input type="checkbox" id="lorren-reginvest-policy" />
+											<label for="lorren-reginvest-policy">Lorren Regional Investment</label>
+										</div>
+									</div>
+									<div class="col-6">
+										<div class="checkbox-group">
+											<input type="checkbox" id="gruni-reginvest-policy" />
+											<label for="gruni-reginvest-policy">Gruni Regional Investment</label>
+										</div>
+									</div>
+								</div>
+
+								<h2 class="mt-2">Regional Investment</h2>
+								<div class="row">
 									<div class="col-3">
-										<label for="economy-angland">Angland Economy</label>
-										<input type="number" id="economy-angland" placeholder="Enter value" min="-10" />
+										<label for="economy-agnland">Agnland Economy</label>
+										<input type="number" id="economy-agnland" placeholder="Enter value" min="-10" />
 									</div>
 									<div class="col-3 mt-3">
 										<div class="checkbox-group">
-											<input type="checkbox" id="angland-fish-export" />
-											<label for="angland-fish-export">Fish Export</label>
+											<input type="checkbox" id="agnland-fish-export" />
+											<label for="agnland-fish-export">Fish Export</label>
 										</div>
 									</div>
 									<div class="col-3 mt-3">
 										<div class="checkbox-group">
-											<input type="checkbox" id="angland-economic-stabilisation" />
-											<label for="angland-economic-stabilisation">Stable Economy</label>
+											<input type="checkbox" id="agnland-economic-stabilisation" />
+											<label for="agnland-economic-stabilisation">Stable Economy</label>
 										</div>
 									</div>
 									<div class="col-3 mt-3">
 										<div class="checkbox-group">
-											<input type="checkbox" id="angland-lack-investment" />
-											<label for="angland-lack-investment">Lack Investment</label>
+											<input type="checkbox" id="agnland-lack-investment" />
+											<label for="agnland-lack-investment">Lack Investment</label>
 										</div>
 									</div>
 								</div>
@@ -377,7 +581,9 @@
 										</div>
 									</div>
 								</div>
-								<div class="row mt-2">
+
+								<h2 class="mt-2">Situations</h2>
+								<div class="row">
 									<div class="col-12">
 										<label class="section-label">Gasom Industry</label>
 										<div class="radio-group">
@@ -417,7 +623,7 @@
 											<input
 												type="radio"
 												id="improved-transport"
-												name="transport-situation"
+												name="transport-situations"
 												value="Improved"
 												hidden
 											/>
@@ -426,7 +632,7 @@
 											<input
 												type="radio"
 												id="weak-transport"
-												name="transport-situation"
+												name="transport-situations"
 												value="Weak"
 												hidden
 											/>
@@ -441,7 +647,7 @@
 											<input
 												type="radio"
 												id="tourism-decline"
-												name="tourism-situation"
+												name="tourism-situations"
 												value="Declining"
 												hidden
 											/>
@@ -450,7 +656,7 @@
 											<input
 												type="radio"
 												id="tourism-booming"
-												name="tourism-situation"
+												name="tourism-situations"
 												value="Booming"
 												hidden
 											/>
@@ -459,7 +665,7 @@
 											<input
 												type="radio"
 												id="tourism-average"
-												name="tourism-situation"
+												name="tourism-situations"
 												value="Average"
 												hidden
 											/>
@@ -474,7 +680,7 @@
 											<input
 												type="radio"
 												id="trade-decreased"
-												name="trade-situation"
+												name="trade-situations"
 												value="Decreased"
 												hidden
 											/>
@@ -483,11 +689,68 @@
 											<input
 												type="radio"
 												id="trade-increased"
-												name="trade-situation"
+												name="trade-situations"
 												value="Increase"
 												hidden
 											/>
 											<label for="trade-increased" class="radio-btn">Increase</label>
+										</div>
+									</div>
+								</div>
+								<div class="row mt-2">
+									<div class="col-12">
+										<label class="section-label">Employment Situation</label>
+										<div class="radio-group">
+											<input
+												type="radio"
+												id="high-employment"
+												name="employment-situations"
+												value="High Employment"
+												hidden
+											/>
+											<label for="high-employment" class="radio-btn">High Employment</label>
+
+											<input
+												type="radio"
+												id="unemployment-crisis"
+												name="employment-situations"
+												value="Unemployment Crisis"
+												hidden
+											/>
+											<label for="unemployment-crisis" class="radio-btn">Unemployment Crisis</label>
+										</div>
+									</div>
+								</div>
+								<div class="row mt-2">
+									<div class="col-12">
+										<label class="section-label">Tax Situation</label>
+										<div class="radio-group">
+											<input
+												type="radio"
+												id="tax-efficient"
+												name="tax-situations"
+												value="Efficient"
+												hidden
+											/>
+											<label for="tax-efficient" class="radio-btn">Efficient</label>
+
+											<input
+												type="radio"
+												id="tax-avoidance"
+												name="tax-situations"
+												value="Avoidance"
+												hidden
+											/>
+											<label for="tax-avoidance" class="radio-btn">Avoidance</label>
+
+											<input
+												type="radio"
+												id="tax-evasion"
+												name="tax-situations"
+												value="Evasion"
+												hidden
+											/>
+											<label for="tax-evasion" class="radio-btn">Evasion</label>
 										</div>
 									</div>
 								</div>
@@ -629,7 +892,7 @@
 
 								<h2>Turn 10</h2>
 								<div class="row mt-2">
-									<div class="col-4">
+									<div class="col-3">
 										<label for="resignations-number">Resignations Number</label>
 										<input
 											type="number"
@@ -639,16 +902,22 @@
 											max="8"
 										/>
 									</div>
-									<div class="col-4 mt-3">
+									<div class="col-3 mt-3">
 										<div class="checkbox-group">
 											<input type="checkbox" id="rumburg-war-plans" />
 											<label for="rumburg-war-plans">Rumburg War Plans</label>
 										</div>
 									</div>
-									<div class="col-4 mt-3">
+									<div class="col-3 mt-3">
 										<div class="checkbox-group">
 											<input type="checkbox" id="rumburg-war-speech" />
-											<label for="rumburg-war-speech">Rumburg War Speech</label>
+											<label for="rumburg-war-speech">Rumburg W. Speech</label>
+										</div>
+									</div>
+									<div class="col-3 mt-3">
+										<div class="checkbox-group">
+											<input type="checkbox" id="a-congress" />
+											<label for="a-congress">A Congress</label>
 										</div>
 									</div>
 								</div>
@@ -1041,6 +1310,316 @@
 								</div>
 							</section>
 						</div>
+
+						<!-- RIZIA DLC -->
+						<div class="tab-content" id="rizia-tab">
+							<div class="value-toggle-group">
+								<button class="value-btn" data-type="reset" disabled>Reset</button>
+								<button class="value-btn" data-type="max" disabled>Set Number to Max. Value</button>
+								<button class="value-btn" data-type="min" disabled>Set Number to Min. Value</button>
+							</div>
+							<section class="data-section">
+								<h2>Authority, Budget, & Energy</h2>
+								<div class="row">
+									<div class="col-4">
+										<label for="rizia-resources-budget">Budget</label>
+										<input type="number" id="rizia-resources-budget" placeholder="Enter value" />
+									</div>
+									<div class="col-4">
+										<label for="rizia-hudstat-budget-min">Resources Budget Min. (HUD Stat)</label>
+										<input
+											type="number"
+											id="rizia-hudstat-budget-min"
+											placeholder="Enter value"
+											min="-20"
+											max="0"
+										/>
+									</div>
+									<div class="col-4">
+										<label for="rizia-hudstat-budget-max">Resources Budget Max. (HUD Stat)</label>
+										<input
+											type="number"
+											id="rizia-hudstat-budget-max"
+											placeholder="Enter value"
+											min="0"
+											max="250"
+										/>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-4">
+										<label for="rizia-resources-authority">Authority</label>
+										<input type="number" id="rizia-resources-authority" placeholder="Enter value" />
+									</div>
+									<div class="col-4">
+										<label for="rizia-hudstat-authority-min">
+											Resources Authority Min. (HUD Stat)
+										</label>
+										<input
+											type="number"
+											id="rizia-hudstat-authority-min"
+											placeholder="Enter value"
+											min="-20"
+											max="0"
+										/>
+									</div>
+									<div class="col-4">
+										<label for="rizia-hudstat-authority-max">
+											Resources Authority Max. (HUD Stat)
+										</label>
+										<input
+											type="number"
+											id="rizia-hudstat-authority-max"
+											placeholder="Enter value"
+											min="0"
+											max="250"
+										/>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-4">
+										<label for="rizia-resources-energy">Energy</label>
+										<input type="number" id="rizia-resources-energy" placeholder="Enter value" />
+									</div>
+									<div class="col-4">
+										<label for="rizia-hudstat-energy-min"> Resources Energy Min. (HUD Stat) </label>
+										<input
+											type="number"
+											id="rizia-hudstat-energy-min"
+											placeholder="Enter value"
+											min="-20"
+											max="0"
+										/>
+									</div>
+									<div class="col-4">
+										<label for="rizia-hudstat-energy-max"> Resources Energy Max. (HUD Stat) </label>
+										<input
+											type="number"
+											id="rizia-hudstat-energy-max"
+											placeholder="Enter value"
+											min="0"
+											max="250"
+										/>
+									</div>
+								</div>
+							</section>
+						</div>
+
+						<div class="tab-content" id="rizia-military-unit-tab">
+							<div class="value-toggle-group">
+								<button class="value-btn" data-type="reset" disabled>Reset</button>
+								<button class="value-btn" data-type="max" disabled>Set Number to Max. Value</button>
+								<button class="value-btn" data-type="min" disabled>Set Number to Min. Value</button>
+							</div>
+							<section class="data-section">
+								<h2>Military Capability</h2>
+								<div class="row">
+									<div class="col-4">
+										<label for="rizia-airstrike-refill">Air Strike Refill per Fragment</label>
+										<input type="number" id="rizia-airstrike-refill" placeholder="Enter value" />
+									</div>
+									<div class="col-4">
+										<label for="rizia-airsupport-refill">Air Support Refill per Fragment</label>
+										<input type="number" id="rizia-airsupport-refill" placeholder="Enter value" />
+									</div>
+									<div class="col-4">
+										<label for="rizia-naval-bombardment">Naval Bombardment Capability</label>
+										<input type="number" id="rizia-naval-bombardment" placeholder="Enter value" />
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-4">
+										<label for="rizia-airstike-cooldown">Air Strike Cooldown</label>
+										<input type="number" id="rizia-airstike-cooldown" placeholder="Enter value" />
+									</div>
+									<div class="col-4">
+										<label for="rizia-airsupport-cooldown"> Air Support Cooldown </label>
+										<input type="number" id="rizia-airsupport-cooldown" placeholder="Enter value" />
+									</div>
+									<div class="col-4">
+										<label for="rizia-war-action-points"> War Action Points </label>
+										<input type="number" id="rizia-war-action-points" placeholder="Enter value" />
+									</div>
+								</div>
+
+								<h2 class="mt-3">Military Unit (Before Training)</h2>
+								<div class="row">
+									<div class="col-3">
+										<label for="rizia-military-manpower">Manpower</label>
+										<input type="number" id="rizia-military-manpower" placeholder="Enter value" />
+									</div>
+									<div class="col-3">
+										<label for="rizia-military-equipment">Equipment</label>
+										<input type="number" id="rizia-military-equipment" placeholder="Enter value" />
+									</div>
+									<div class="col-3">
+										<label for="rizia-military-trucks">Trucks</label>
+										<input type="number" id="rizia-military-trucks" placeholder="Enter value" />
+									</div>
+									<div class="col-3">
+										<label for="rizia-military-tanks">Tanks</label>
+										<input type="number" id="rizia-military-tanks" placeholder="Enter value" />
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-3">
+										<label for="rizia-military-ships">Ships</label>
+										<input type="number" id="rizia-military-ships" placeholder="Enter value" />
+									</div>
+									<div class="col-3">
+										<label for="rizia-military-submarines">Submarines</label>
+										<input type="number" id="rizia-military-submarines" placeholder="Enter value" />
+									</div>
+									<div class="col-3">
+										<label for="rizia-military-bomber-planes">Bomber Planes</label>
+										<input
+											type="number"
+											id="rizia-military-bomber-planes"
+											placeholder="Enter value"
+										/>
+									</div>
+									<div class="col-3">
+										<label for="rizia-military-fighter-planes">Fighter Planes</label>
+										<input
+											type="number"
+											id="rizia-military-fighter-planes"
+											placeholder="Enter value"
+										/>
+									</div>
+								</div>
+
+								<h2 class="mt-3">Military Unit Total (After Training)</h2>
+								<div class="row">
+									<div class="col-3">
+										<label for="rizia-military-infantry-total">Infantry</label>
+										<input
+											type="number"
+											id="rizia-military-infantry-total"
+											placeholder="Enter value"
+										/>
+									</div>
+									<div class="col-3">
+										<label for="rizia-military-support-total">Support</label>
+										<input
+											type="number"
+											id="rizia-military-support-total"
+											placeholder="Enter value"
+										/>
+									</div>
+									<div class="col-3">
+										<label for="rizia-military-tank-total">Tank</label>
+										<input type="number" id="rizia-military-tank-total" placeholder="Enter value" />
+									</div>
+									<div class="col-3">
+										<label for="rizia-military-ship-total">Ship</label>
+										<input type="number" id="rizia-military-ship-total" placeholder="Enter value" />
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-3">
+										<label for="rizia-military-paratrooper-total">Paratrooper</label>
+										<input
+											type="number"
+											id="rizia-military-paratrooper-total"
+											placeholder="Enter value"
+										/>
+									</div>
+									<div class="col-3">
+										<label for="rizia-military-mercenary-total">Mercenary</label>
+										<input
+											type="number"
+											id="rizia-military-mercenary-total"
+											placeholder="Enter value"
+										/>
+									</div>
+									<div class="col-3">
+										<label for="rizia-military-azaro-total">Azaro</label>
+										<input
+											type="number"
+											id="rizia-military-azaro-total"
+											placeholder="Enter value"
+										/>
+									</div>
+									<div class="col-3">
+										<label for="rizia-military-sazon-total">Sazon</label>
+										<input
+											type="number"
+											id="rizia-military-sazon-total"
+											placeholder="Enter value"
+										/>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-3">
+										<label for="rizia-military-golden-guard-total">Golden Guard</label>
+										<input
+											type="number"
+											id="rizia-military-golden-guard-total"
+											placeholder="Enter value"
+										/>
+									</div>
+									<div class="col-3">
+										<label for="rizia-military-mountaineer-total">Mountaineer</label>
+										<input
+											type="number"
+											id="rizia-military-mountaineer-total"
+											placeholder="Enter value"
+										/>
+									</div>
+									<div class="col-3">
+										<label for="rizia-military-militia-total">Militia</label>
+										<input
+											type="number"
+											id="rizia-military-militia-total"
+											placeholder="Enter value"
+										/>
+									</div>
+									<div class="col-3">
+										<label for="rizia-military-fighter-total">Fighter</label>
+										<input
+											type="number"
+											id="rizia-military-fighter-total"
+											placeholder="Enter value"
+										/>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-3">
+										<label for="rizia-military-submarine-total">Submarine</label>
+										<input
+											type="number"
+											id="rizia-military-submarine-total"
+											placeholder="Enter value"
+										/>
+									</div>
+									<div class="col-3">
+										<label for="rizia-military-flagship-total">Flagship</label>
+										<input
+											type="number"
+											id="rizia-military-flagship-total"
+											placeholder="Enter value"
+										/>
+									</div>
+									<div class="col-3">
+										<label for="rizia-military-marine-total">Marine</label>
+										<input
+											type="number"
+											id="rizia-military-marine-total"
+											placeholder="Enter value"
+										/>
+									</div>
+									<div class="col-3">
+										<label for="rizia-military-bomber-total">Bomber</label>
+										<input
+											type="number"
+											id="rizia-military-bomber-total"
+											placeholder="Enter value"
+										/>
+									</div>
+								</div>
+							</section>
+						</div>
+						<!-- END RIZIA DLC -->
 					</div>
 				</div>
 			</div>
@@ -1058,16 +1637,23 @@
 				</div>
 
 				<div class="tab-buttons">
-					<button class="tab-btn active" data-tab="money-assembly">Money & Assembly</button>
+					<button class="tab-btn active" data-tab="money-opinion">Money & Opinion</button>
+					<button class="tab-btn" data-tab="assembly-court">Assembly & Court</button>
+					<button class="tab-btn" data-tab="presidential-decrees">Presidential Decrees</button>
 					<button class="tab-btn" data-tab="economy">Economy</button>
 					<button class="tab-btn" data-tab="game-condition">Game Condition</button>
 					<button class="tab-btn" data-tab="items">Collectible Items</button>
+
+					<hr />
+
+					<button class="tab-btn" data-tab="rizia">Rizia</button>
+					<button class="tab-btn" data-tab="rizia-military-unit">Military Unit</button>
 				</div>
 			</div>
 		</div>
 
 		<!-- main idea sources -->
-		<footer class="footer-shoutout">
+		<footer class="footer-shoutout mt-3">
 			<p class="footer-credit">Thanks for the ideas ❤️</p>
 			<div class="footer-shoutout-links">
 				<a

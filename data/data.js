@@ -1,5 +1,11 @@
 export const dataMappings = [
+	/*
+	 *
+	 * MONEY & OPINION
+	 *
+	 */
 	{
+		tab: "money-opinion",
 		type: "number",
 		key: "BaseGame.Sordland_HUDStat_GovernmentBudget_Min",
 		id: "gov-budget-min-hudstat",
@@ -7,6 +13,7 @@ export const dataMappings = [
 		max: 0,
 	},
 	{
+		tab: "money-opinion",
 		type: "number",
 		key: "BaseGame.Sordland_HUDStat_GovernmentBudget_Max",
 		id: "gov-budget-max-hudstat",
@@ -14,6 +21,7 @@ export const dataMappings = [
 		max: 50,
 	},
 	{
+		tab: "money-opinion",
 		type: "number",
 		key: "BaseGame.GovernmentBudget",
 		id: "gov-budget",
@@ -21,6 +29,7 @@ export const dataMappings = [
 		max: 50,
 	},
 	{
+		tab: "money-opinion",
 		type: "number",
 		key: "BaseGame.PersonalWealth",
 		id: "personal-wealth",
@@ -28,6 +37,7 @@ export const dataMappings = [
 		max: 50,
 	},
 	{
+		tab: "money-opinion",
 		type: "number",
 		key: "BaseGame.Sordland_HUDStat_PersonalWealth_Min",
 		id: "personal-wealth-min-hudstat",
@@ -35,6 +45,7 @@ export const dataMappings = [
 		max: 0,
 	},
 	{
+		tab: "money-opinion",
 		type: "number",
 		key: "BaseGame.Sordland_HUDStat_PersonalWealth_Max",
 		id: "personal-wealth-max-hudstat",
@@ -42,6 +53,7 @@ export const dataMappings = [
 		max: 50,
 	},
 	{
+		tab: "money-opinion",
 		type: "number",
 		key: "BaseGame.Public_Opinion",
 		id: "public-opinion",
@@ -49,6 +61,7 @@ export const dataMappings = [
 		max: 100,
 	},
 	{
+		tab: "money-opinion",
 		type: "number",
 		key: "BaseGame.Bludish_Opinion",
 		id: "bludish-opinion",
@@ -56,6 +69,7 @@ export const dataMappings = [
 		max: 100,
 	},
 	{
+		tab: "money-opinion",
 		type: "number",
 		key: "BaseGame.Country_Unrest",
 		id: "country-unrest",
@@ -63,6 +77,7 @@ export const dataMappings = [
 		max: 100,
 	},
 	{
+		tab: "money-opinion",
 		type: "number",
 		key: "BaseGame.Relations_Franc_Opinion",
 		id: "frank-opinion",
@@ -70,6 +85,7 @@ export const dataMappings = [
 		max: 100,
 	},
 	{
+		tab: "money-opinion",
 		type: "number",
 		key: "BaseGame.Relations_Monica_Opinion",
 		id: "monica-opinion",
@@ -77,6 +93,7 @@ export const dataMappings = [
 		max: 100,
 	},
 	{
+		tab: "money-opinion",
 		type: "number",
 		key: "BaseGame.Relations_Lucian_Opinion",
 		id: "lucian-opinion",
@@ -94,6 +111,7 @@ export const dataMappings = [
 		id: "deana-opinion",
 	},
 	{
+		tab: "money-opinion",
 		type: "number",
 		key: "BaseGame.AgnoliaTradeDeal_Negotiation",
 		id: "agnolia-negotiation",
@@ -101,6 +119,7 @@ export const dataMappings = [
 		max: 50,
 	},
 	{
+		tab: "money-opinion",
 		type: "number",
 		key: "BaseGame.WehlenTradeDeal_Negotiation",
 		id: "wehlen-negotiation",
@@ -112,27 +131,33 @@ export const dataMappings = [
 		id: "ewald-stance",
 		options: [
 			{
-				label: "Discontent",
 				key: "BaseGame.Relations_Ewald_Discontent",
 				id: "ewald-discontent",
 			},
 			{
-				label: "Neutral",
 				key: "BaseGame.Relations_Ewald_Neutral",
 				id: "ewald-neutral",
 			},
 			{
-				label: "Friendly",
 				key: "BaseGame.Relations_Ewald_Friendly",
 				id: "ewald-friendly",
 			},
 		],
 	},
-	// ASSEMBLY & COURT
+	/*
+	 *
+	 * ASSEMBLY & COURT
+	 *
+	 */
 	{
 		type: "checkbox",
 		key: "BaseGame.Faction_USP_AgainstProposal",
 		id: "usp-against",
+	},
+	{
+		type: "checkbox",
+		key: "BaseGame.Faction_USP_Obstructionist",
+		id: "usp-obstructionist",
 	},
 	{
 		type: "checkbox",
@@ -164,10 +189,139 @@ export const dataMappings = [
 		min: 0,
 		max: 8,
 	},
-	// ECONOMY
-	//
-	//
-	//
+	{
+		type: "checkbox",
+		key: "BaseGame.Enable_Congress",
+		id: "enable-congress",
+	},
+	/*
+	 *
+	 * PRESIDENTIAL DECREES
+	 *
+	 */
+	{
+		tab: "presidential-decrees",
+		type: "checkbox",
+		key: "BaseGame.Reform_PresiPower_Default_AmnestyForPoliticalPrisoners",
+		id: "amnesty-for-prisoners",
+	},
+	{
+		tab: "presidential-decrees",
+		type: "checkbox",
+		key: "BaseGame.Reform_PresiPower_Default_DeSollinisation",
+		id: "de-sollinisation",
+	},
+	{
+		tab: "presidential-decrees",
+		type: "checkbox",
+		key: "BaseGame.Reform_PresiPower_Weak_FairTradeCommission",
+		id: "fair-trade-commission",
+	},
+	{
+		tab: "presidential-decrees",
+		type: "checkbox",
+		key: "BaseGame.Reform_PresiPower_Default_GenderEqualityInEducation",
+		id: "gender-equality",
+	},
+	{
+		tab: "presidential-decrees",
+		type: "checkbox",
+		key: "BaseGame.Reform_PresiPower_Default_PrivatePrisons",
+		id: "private-prisons",
+	},
+	{
+		tab: "presidential-decrees",
+		type: "checkbox",
+		key: "BaseGame.Reform_PresiPower_Default_RuralEducationInstitutes",
+		id: "rural-education",
+	},
+	{
+		tab: "presidential-decrees",
+		type: "checkbox",
+		key: "BaseGame.Reform_PresiPower_Strong_CapitalPunishment",
+		id: "capital-punishment",
+	},
+	{
+		tab: "presidential-decrees",
+		type: "checkbox",
+		key: "BaseGame.Reform_PresiPower_Strong_GunRights",
+		id: "gun-rights",
+	},
+	{
+		tab: "presidential-decrees",
+		type: "checkbox",
+		key: "BaseGame.Reform_PresiPower_Strong_PurgeGeneralStaff",
+		id: "purge-general",
+	},
+	{
+		tab: "presidential-decrees",
+		type: "checkbox",
+		key: "BaseGame.Reform_PresiPower_Strong_RelocationToRural",
+		id: "relocate-to-rural",
+	},
+	{
+		tab: "presidential-decrees",
+		type: "checkbox",
+		key: "BaseGame.Reform_PresiPower_Strong_RemoveBankIndependence",
+		id: "remove-bank-independence",
+	},
+	{
+		tab: "presidential-decrees",
+		type: "checkbox",
+		key: "BaseGame.Reform_PresiPower_Strong_RemoveReligiousSymbols",
+		id: "remove-religious-symbols",
+	},
+	{
+		tab: "presidential-decrees",
+		type: "checkbox",
+		key: "BaseGame.Reform_PresiPower_Weak_FreeMedicine",
+		id: "free-medicine",
+	},
+	{
+		tab: "presidential-decrees",
+		type: "checkbox",
+		key: "BaseGame.Reform_PresiPower_Weak_LowerRetirementAge",
+		id: "lower-retirement-age",
+	},
+	{
+		tab: "presidential-decrees",
+		type: "checkbox",
+		key: "BaseGame.Reform_PresiPower_Weak_SordishRadioTVCouncil",
+		id: "sordish-media-controll",
+	},
+	{
+		type: "radio-group",
+		id: "sordish-media",
+		options: [
+			{
+				key: "BaseGame.Reform_PresiPower_Weak_SordishRadioTVCouncil_Controlled",
+				id: "media-controlled",
+			},
+			{
+				key: "BaseGame.Reform_PresiPower_Weak_SordishRadioTVCouncil_Independent",
+				id: "media-independent",
+			},
+		],
+	},
+	/*
+	 *
+	 * ECONOMY
+	 *
+	 */
+	{
+		type: "number",
+		key: "BaseGame.TradeAmount",
+		id: "trade-amount",
+		min: 0,
+		max: 100,
+	},
+	{
+		type: "number",
+		key: "BaseGame.EconomicReliance",
+		id: "economic-reliance",
+		min: 0,
+		max: 100,
+	},
 	{
 		type: "checkbox",
 		key: "BaseGame.SuperpowerTradeWarHappened",
@@ -187,6 +341,26 @@ export const dataMappings = [
 		type: "checkbox",
 		key: "BaseGame.Situation_Economy_GlobalTradeWar",
 		id: "global-trade-war",
+	},
+	{
+		type: "checkbox",
+		key: "BaseGame.Policy_Economy_RegionalInvestment_Lorren",
+		id: "lorren-reginvest-policy",
+	},
+	{
+		type: "checkbox",
+		key: "BaseGame.Policy_Economy_RegionalInvestment_Bergia",
+		id: "bergia-reginvest-policy",
+	},
+	{
+		type: "checkbox",
+		key: "BaseGame.Policy_Economy_RegionalInvestment_Agnland",
+		id: "agnland-reginvest-policy",
+	},
+	{
+		type: "checkbox",
+		key: "BaseGame.Policy_Economy_RegionalInvestment_Gruni",
+		id: "gruni-reginvest-policy",
 	},
 	{
 		type: "number",
@@ -278,20 +452,49 @@ export const dataMappings = [
 	},
 	{
 		type: "radio-group",
+		id: "employment-situations",
+		options: [
+			{
+				key: "BaseGame.Situation_Economy_HighEmployment",
+				id: "high-employment",
+			},
+			{
+				key: "BaseGame.Situation_Economy_UnemploymentCrisis",
+				id: "unemployment-crisis",
+			},
+		],
+	},
+	{
+		type: "radio-group",
+		id: "tax-situations",
+		options: [
+			{
+				key: "BaseGame.Situation_Economy_TaxEfficientEconomy",
+				id: "tax-efficient",
+			},
+			{
+				key: "BaseGame.Situation_Economy_TaxAvoidance",
+				id: "tax-avoidance",
+			},
+			{
+				key: "BaseGame.Situation_Economy_TaxEvasion",
+				id: "tax-evasion",
+			},
+		],
+	},
+	{
+		type: "radio-group",
 		id: "gasom-industry",
 		options: [
 			{
-				label: "Booming",
 				key: "BaseGame.Gasom_Booming",
 				id: "gasom-booming",
 			},
 			{
-				label: "Downsized",
 				key: "BaseGame.Gasom_Downsized",
 				id: "gasom-downsized",
 			},
 			{
-				label: "Bankrupt",
 				key: "BaseGame.Gasom_Bankrupt",
 				id: "gasom-bankrupt",
 			},
@@ -299,15 +502,13 @@ export const dataMappings = [
 	},
 	{
 		type: "radio-group",
-		id: "transport-situation",
+		id: "transport-situations",
 		options: [
 			{
-				label: "Improved",
 				key: "BaseGame.Situation_Economy_ImprovedTransportation",
 				id: "improved-transport",
 			},
 			{
-				label: "Weak",
 				key: "BaseGame.Situation_Economy_WeakTransportation",
 				id: "weak-transport",
 			},
@@ -315,20 +516,17 @@ export const dataMappings = [
 	},
 	{
 		type: "radio-group",
-		id: "tourism-situation",
+		id: "tourism-situations",
 		options: [
 			{
-				label: "Declining",
 				key: "BaseGame.Situation_Economy_Tourism_Declining",
 				id: "tourism-decline",
 			},
 			{
-				label: "Booming",
 				key: "BaseGame.Situation_Economy_Tourism_Booming",
 				id: "tourism-booming",
 			},
 			{
-				label: "Average",
 				key: "BaseGame.Situation_Economy_Tourism_Average",
 				id: "tourism-average",
 			},
@@ -336,33 +534,32 @@ export const dataMappings = [
 	},
 	{
 		type: "radio-group",
-		id: "trade-situation",
+		id: "trade-situations",
 		options: [
 			{
-				label: "Decreased",
 				key: "BaseGame.Situation_Economy_DecreasedTrade",
 				id: "trade-decreased",
 			},
 			{
-				label: "Increased",
 				key: "BaseGame.Situation_Economy_IncreasedTrade",
 				id: "trade-increased",
 			},
 		],
 	},
-
-	// GAME CONDITION
+	/*
+	 *
+	 * GAME CONDITION
+	 *
+	 */
 	{
 		type: "radio-group",
 		id: "infrastructure-project",
 		options: [
 			{
-				label: "Railway",
 				key: "BaseGame.Turn01_InT_Investment_Railway",
 				id: "railway-project",
 			},
 			{
-				label: "Highway",
 				key: "BaseGame.Turn01_InT_Investment_Highway",
 				id: "highway-project",
 			},
@@ -400,17 +597,14 @@ export const dataMappings = [
 		id: "military-expansion",
 		options: [
 			{
-				label: "Army",
 				key: "BaseGame.Turn06_SnO_Expansion_Army",
 				id: "army-expansion",
 			},
 			{
-				label: "Navy",
 				key: "BaseGame.Turn06_SnO_Expansion_Navy",
 				id: "navy-expansion",
 			},
 			{
-				label: "Airforce",
 				key: "BaseGame.Turn06_SnO_Expansion_Airforce",
 				id: "airforce-expansion",
 			},
@@ -421,21 +615,23 @@ export const dataMappings = [
 		id: "military-modernisation",
 		options: [
 			{
-				label: "Army",
 				key: "BaseGame.Turn06_SnO_Modernisation_Army",
 				id: "army-modernisation",
 			},
 			{
-				label: "Navy",
 				key: "BaseGame.Turn06_SnO_Modernisation_Navy",
 				id: "navy-modernisation",
 			},
 			{
-				label: "Airforce",
 				key: "BaseGame.Turn06_SnO_Modernisation_Airforce",
 				id: "airforce-modernisation",
 			},
 		],
+	},
+	{
+		type: "checkbox",
+		key: "GameCondition.Turn10_A_Congress",
+		id: "a-congress",
 	},
 	{
 		type: "number",
@@ -459,12 +655,10 @@ export const dataMappings = [
 		id: "rumburg-war",
 		options: [
 			{
-				label: "Rumburg War Lost",
 				key: "GameCondition.Turn11_SnO_RumburgWarLost",
 				id: "rumburg-war-lost",
 			},
 			{
-				label: "Rumburg War Win",
 				key: "GameCondition.Turn11_SnO_RumburgWarWin",
 				id: "rumburg-war-win",
 			},
@@ -480,7 +674,11 @@ export const dataMappings = [
 		key: "GameCondition.Turn11_SnO_CoupTrial",
 		id: "coup-d-etat",
 	},
-	// Collectible Item
+	/*
+	 *
+	 * COLLECTIBLE ITEMS
+	 *
+	 */
 	{
 		type: "boolean-date",
 		key: "BaseGameSupport.CollectionItem_AnricaTrophy",
@@ -606,5 +804,329 @@ export const dataMappings = [
 		id: "wine-bottle",
 		dateKey: "BaseGameSupport.CollectionItem_WineBottle_Date",
 		dateId: "wine-bottle-date",
+	},
+
+	/*
+	 *
+	 * RIZIA DLC
+	 *
+	 */
+	{
+		tab: "rizia",
+		type: "number",
+		key: "RiziaDLC.Resources_Budget",
+		id: "rizia-resources-budget",
+		min: -20,
+		max: 800,
+	},
+	{
+		tab: "rizia",
+		type: "number",
+		key: "RiziaDLC.Rizia_HUDStat_Budget_Min",
+		id: "rizia-hudstat-budget-min",
+		min: -20,
+		max: 0,
+	},
+	{
+		tab: "rizia",
+		type: "number",
+		key: "RiziaDLC.Rizia_HUDStat_Budget_Max",
+		id: "rizia-hudstat-budget-max",
+		min: -20,
+		max: 800,
+	},
+	{
+		tab: "rizia",
+		type: "number",
+		key: "RiziaDLC.Resources_Authority",
+		id: "rizia-resources-authority",
+		min: -20,
+		max: 800,
+	},
+	{
+		tab: "rizia",
+		type: "number",
+		key: "RiziaDLC.Rizia_HUDStat_Authority_Min",
+		id: "rizia-hudstat-authority-min",
+		min: -20,
+		max: 0,
+	},
+	{
+		tab: "rizia",
+		type: "number",
+		key: "RiziaDLC.Rizia_HUDStat_Authority_Max",
+		id: "rizia-hudstat-authority-max",
+		min: -20,
+		max: 800,
+	},
+	{
+		tab: "rizia",
+		type: "number",
+		key: "RiziaDLC.Resources_Energy",
+		id: "rizia-resources-energy",
+		min: -20,
+		max: 800,
+	},
+	{
+		tab: "rizia",
+		type: "number",
+		key: "RiziaDLC.Rizia_HUDStat_Energy_Min",
+		id: "rizia-hudstat-energy-min",
+		min: -20,
+		max: 0,
+	},
+	{
+		tab: "rizia",
+		type: "number",
+		key: "RiziaDLC.Rizia_HUDStat_Energy_Max",
+		id: "rizia-hudstat-energy-max",
+		min: -20,
+		max: 800,
+	},
+
+	/*
+	 *
+	 * RIZIA DLC: MILITARY UNIT TOTAL
+	 *
+	 */
+	{
+		tab: "rizia-military-unit",
+		type: "number",
+		key: "RiziaDLC.Resources_Military_AirStrikeRefillPerFragment",
+		id: "rizia-airstrike-refill",
+		min: 0,
+		max: 250,
+	},
+	{
+		tab: "rizia-military-unit",
+		type: "number",
+		key: "RiziaDLC.Resources_Military_AirSupportRefillPerFragment",
+		id: "rizia-airsupport-refill",
+		min: 0,
+		max: 250,
+	},
+	{
+		tab: "rizia-military-unit",
+		type: "number",
+		key: "RiziaDLC.Resources_Military_NavalBombardmentCapability",
+		id: "rizia-naval-bombardment",
+		min: 0,
+		max: 250,
+	},
+	{
+		tab: "rizia-military-unit",
+		type: "number",
+		key: "RiziaDLC.Resources_Military_AirStrikeCooldown",
+		id: "rizia-airstike-cooldown",
+		min: -2,
+		max: 0,
+	},
+	{
+		tab: "rizia-military-unit",
+		type: "number",
+		key: "RiziaDLC.Resources_Military_AirSupportCooldown",
+		id: "rizia-airsupport-cooldown",
+		min: -2,
+		max: 0,
+	},
+	{
+		tab: "rizia-military-unit",
+		type: "number",
+		key: "RiziaDLC.War_ActionPoints",
+		id: "rizia-war-action-points",
+		min: 0,
+		max: 50,
+	},
+	{
+		tab: "rizia-military-unit",
+		type: "number",
+		key: "RiziaDLC.Resources_Military_Manpower",
+		id: "rizia-military-manpower",
+		min: 0,
+		max: 12000,
+	},
+	{
+		tab: "rizia-military-unit",
+		type: "number",
+		key: "RiziaDLC.Resources_Military_Equipment",
+		id: "rizia-military-equipment",
+		min: 0,
+		max: 12000,
+	},
+	{
+		tab: "rizia-military-unit",
+		type: "number",
+		key: "RiziaDLC.Resources_Military_Trucks",
+		id: "rizia-military-trucks",
+		min: 0,
+		max: 12000,
+	},
+	{
+		tab: "rizia-military-unit",
+		type: "number",
+		key: "RiziaDLC.Resources_Military_Tanks",
+		id: "rizia-military-tanks",
+		min: 0,
+		max: 12000,
+	},
+	{
+		tab: "rizia-military-unit",
+		type: "number",
+		key: "RiziaDLC.Resources_Military_Ships",
+		id: "rizia-military-ships",
+		min: 0,
+		max: 12000,
+	},
+	{
+		tab: "rizia-military-unit",
+		type: "number",
+		key: "RiziaDLC.Resources_Military_Submarines",
+		id: "rizia-military-submarines",
+		min: 0,
+		max: 12000,
+	},
+	{
+		tab: "rizia-military-unit",
+		type: "number",
+		key: "RiziaDLC.Resources_Military_BomberPlanes",
+		id: "rizia-military-bomber-planes",
+		min: 0,
+		max: 12000,
+	},
+	{
+		tab: "rizia-military-unit",
+		type: "number",
+		key: "RiziaDLC.Resources_Military_FighterPlanes",
+		id: "rizia-military-fighter-planes",
+		min: 0,
+		max: 12000,
+	},
+	{
+		tab: "rizia-military-unit",
+		type: "number",
+		key: "RiziaDLC.Army_Unit_Infantry_Total",
+		id: "rizia-military-infantry-total",
+		min: 0,
+		max: 300,
+	},
+	{
+		tab: "rizia-military-unit",
+		type: "number",
+		key: "RiziaDLC.Army_Unit_Support_Total",
+		id: "rizia-military-support-total",
+		min: 0,
+		max: 300,
+	},
+	{
+		tab: "rizia-military-unit",
+		type: "number",
+		key: "RiziaDLC.Army_Unit_Tank_Total",
+		id: "rizia-military-tank-total",
+		min: 0,
+		max: 300,
+	},
+	{
+		tab: "rizia-military-unit",
+		type: "number",
+		key: "RiziaDLC.Army_Unit_Ship_Total",
+		id: "rizia-military-ship-total",
+		min: 0,
+		max: 300,
+	},
+	{
+		tab: "rizia-military-unit",
+		type: "number",
+		key: "RiziaDLC.Army_Unit_Paratrooper_Total",
+		id: "rizia-military-paratrooper-total",
+		min: 0,
+		max: 300,
+	},
+	{
+		tab: "rizia-military-unit",
+		type: "number",
+		key: "RiziaDLC.Army_Unit_Mercenary_Total",
+		id: "rizia-military-mercenary-total",
+		min: 0,
+		max: 300,
+	},
+	{
+		tab: "rizia-military-unit",
+		type: "number",
+		key: "RiziaDLC.Army_Unit_Azaro_Total",
+		id: "rizia-military-azaro-total",
+		min: 0,
+		max: 300,
+	},
+	{
+		tab: "rizia-military-unit",
+		type: "number",
+		key: "RiziaDLC.Army_Unit_Sazon_Total",
+		id: "rizia-military-sazon-total",
+		min: 0,
+		max: 300,
+	},
+	{
+		tab: "rizia-military-unit",
+		type: "number",
+		key: "RiziaDLC.Army_Unit_GoldenGuard_Total",
+		id: "rizia-military-golden-guard-total",
+		min: 0,
+		max: 300,
+	},
+	{
+		tab: "rizia-military-unit",
+		type: "number",
+		key: "RiziaDLC.Army_Unit_Mountaineer_Total",
+		id: "rizia-military-mountaineer-total",
+		min: 0,
+		max: 300,
+	},
+	{
+		tab: "rizia-military-unit",
+		type: "number",
+		key: "RiziaDLC.Army_Unit_Militia_Total",
+		id: "rizia-military-militia-total",
+		min: 0,
+		max: 300,
+	},
+	{
+		tab: "rizia-military-unit",
+		type: "number",
+		key: "RiziaDLC.Army_Unit_Fighter_Total",
+		id: "rizia-military-fighter-total",
+		min: 0,
+		max: 300,
+	},
+	{
+		tab: "rizia-military-unit",
+		type: "number",
+		key: "RiziaDLC.Army_Unit_Submarine_Total",
+		id: "rizia-military-submarine-total",
+		min: 0,
+		max: 300,
+	},
+	{
+		tab: "rizia-military-unit",
+		type: "number",
+		key: "RiziaDLC.Army_Unit_Flagship_Total",
+		id: "rizia-military-flagship-total",
+		min: 0,
+		max: 300,
+	},
+	{
+		tab: "rizia-military-unit",
+		type: "number",
+		key: "RiziaDLC.Army_Unit_Marine_Total",
+		id: "rizia-military-marine-total",
+		min: 0,
+		max: 300,
+	},
+	{
+		tab: "rizia-military-unit",
+		type: "number",
+		key: "RiziaDLC.Army_Unit_Bomber_Total",
+		id: "rizia-military-bomber-total",
+		min: 0,
+		max: 300,
 	},
 ];
