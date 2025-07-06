@@ -365,7 +365,7 @@ export const dataMappings = [
 	{
 		type: "number",
 		key: "BaseGame.Economy_Agnland",
-		id: "economy-angland",
+		id: "economy-agnland",
 		min: -50,
 		max: 50,
 	},
