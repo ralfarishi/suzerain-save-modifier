@@ -18,7 +18,7 @@ export const dataMappings = [
 		key: "BaseGame.Sordland_HUDStat_GovernmentBudget_Max",
 		id: "gov-budget-max-hudstat",
 		min: 0,
-		max: 50,
+		max: 100,
 	},
 	{
 		tab: "money-opinion",
@@ -26,7 +26,7 @@ export const dataMappings = [
 		key: "BaseGame.GovernmentBudget",
 		id: "gov-budget",
 		min: 0,
-		max: 50,
+		max: 100,
 	},
 	{
 		tab: "money-opinion",
@@ -34,7 +34,7 @@ export const dataMappings = [
 		key: "BaseGame.PersonalWealth",
 		id: "personal-wealth",
 		min: 0,
-		max: 50,
+		max: 100,
 	},
 	{
 		tab: "money-opinion",
@@ -50,7 +50,7 @@ export const dataMappings = [
 		key: "BaseGame.Sordland_HUDStat_PersonalWealth_Max",
 		id: "personal-wealth-max-hudstat",
 		min: 0,
-		max: 50,
+		max: 100,
 	},
 	{
 		tab: "money-opinion",
@@ -919,7 +919,7 @@ export const dataMappings = [
 		key: "RiziaDLC.Resources_Military_AirStrikeCooldown",
 		id: "rizia-airstike-cooldown",
 		min: -2,
-		max: 0,
+		max: 10,
 	},
 	{
 		tab: "rizia-military-unit",
@@ -927,7 +927,7 @@ export const dataMappings = [
 		key: "RiziaDLC.Resources_Military_AirSupportCooldown",
 		id: "rizia-airsupport-cooldown",
 		min: -2,
-		max: 0,
+		max: 10,
 	},
 	{
 		tab: "rizia-military-unit",

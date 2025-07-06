@@ -62,7 +62,7 @@ function validateFieldRange(input, field) {
 	const min = field.min ?? null;
 	const max = field.max ?? null;
 
-	if ((min !== null && value < min) || (max !== null && value > max)) {
+	if (isNaN(value) || (min !== null && value < min) || (max !== null && value > max)) {
 		input.classList.add("input-invalid");
 		showAlert(`The value must be between ${min} & ${max}`);
 	} else {
@@ -83,7 +83,7 @@ function checkAllValid() {
 			const min = field.min ?? null;
 			const max = field.max ?? null;
 
-			if ((min !== null && value < min) || (max !== null && value > max)) {
+			if (isNaN(value) || (min !== null && value < min) || (max !== null && value > max)) {
 				isAllValid = false;
 				break;
 			}
