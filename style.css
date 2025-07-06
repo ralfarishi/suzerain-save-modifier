@@ -404,6 +404,12 @@ button[type="submit"]:disabled {
 	color: white;
 }
 
+.tab-btn.tab-btn-error {
+	border: 2px solid #e63946;
+	background-color: #ffe5e5;
+	color: #e63946;
+}
+
 .tab-content {
 	display: none;
 	animation: fadeIn 0.8s ease-in-out;

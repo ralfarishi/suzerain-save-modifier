@@ -56,15 +56,18 @@ function setupBooleanDateToggle() {
 	}
 }
 
+let hasSpecificInputAlert = false;
+
 // validate the input number range
 function validateFieldRange(input, field) {
 	const value = parseInt(input.value, 10);
 	const min = field.min ?? null;
 	const max = field.max ?? null;
 
-	if (isNaN(value) || (min !== null && value < min) || (max !== null && value > max)) {
+	if ((min !== null && value < min) || (max !== null && value > max)) {
 		input.classList.add("input-invalid");
 		showAlert(`The value must be between ${min} & ${max}`);
+		hasSpecificInputAlert = true;
 	} else {
 		input.classList.remove("input-invalid");
 	}
@@ -74,23 +77,47 @@ function validateFieldRange(input, field) {
 // prevent download when input number beyond max. or min. limit
 function checkAllValid() {
 	let isAllValid = true;
+	const tabErrors = {};
+
+	document.querySelectorAll(".tab-btn").forEach((btn) => btn.classList.remove("tab-btn-error"));
+
 	for (const field of dataMappings) {
 		if (field.type === "number") {
 			const input = document.getElementById(field.id);
 			if (!input) continue;
 
-			const value = parseInt(input.value, 10);
+			const value = parseInt(input.value.trim() || "0", 10);
 			const min = field.min ?? null;
 			const max = field.max ?? null;
 
 			if (isNaN(value) || (min !== null && value < min) || (max !== null && value > max)) {
 				isAllValid = false;
-				break;
+				// save tab error
+				if (field.tab) tabErrors[field.tab] = true;
+				// mark input error
+				input.classList.add("input-invalid");
+			} else {
+				input.classList.remove("input-invalid");
 			}
 		}
 	}
 
+	Object.keys(tabErrors).forEach((tabName) => {
+		const tabBtn = document.querySelector(`.tab-btn[data-tab="${tabName}"]`);
+		if (tabBtn) tabBtn.classList.add("tab-btn-error");
+	});
+
+	// does error occur on inactive tab
+	const activeTab = document.querySelector(".tab-btn.active")?.dataset.tab;
+	const isErrorInOtherTab = Object.keys(tabErrors).some((t) => t !== activeTab);
+
+	if (!isAllValid && isErrorInOtherTab && !hasSpecificInputAlert) {
+		showAlert("There is an input error. Please check the marked tab!");
+	}
+
 	document.getElementById("download-button").disabled = !isAllValid;
+
+	hasSpecificInputAlert = false;
 }
 
 function parseFieldsFromSave(variablesString) {
@@ -175,6 +202,7 @@ document.getElementById("json-file-input").addEventListener("change", function (
 });
 
 document.getElementById("download-button").addEventListener("click", function () {
+	hasSpecificInputAlert = false;
 	let isValid = true;
 
 	if (!window.modifiedData || !window.variablesString) {
