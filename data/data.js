@@ -150,27 +150,32 @@ export const dataMappings = [
 	 *
 	 */
 	{
+		tab: "assembly-court",
 		type: "checkbox",
 		key: "BaseGame.Faction_USP_AgainstProposal",
 		id: "usp-against",
 	},
 	{
+		tab: "assembly-court",
 		type: "checkbox",
 		key: "BaseGame.Faction_USP_Obstructionist",
 		id: "usp-obstructionist",
 	},
 	{
+		tab: "assembly-court",
 		type: "checkbox",
 		key: "BaseGame.Reform_Albin_Convinced",
 		id: "albin-convinced-reform",
 	},
 
 	{
+		tab: "assembly-court",
 		type: "checkbox",
 		key: "BaseGame.Reform_Gloria_Convinced",
 		id: "gloria-convinced-reform",
 	},
 	{
+		tab: "assembly-court",
 		type: "number",
 		key: "BaseGame.Reform_Assembly_Vote",
 		id: "assembly-vote-reform",
@@ -178,11 +183,13 @@ export const dataMappings = [
 		max: 200,
 	},
 	{
+		tab: "assembly-court",
 		type: "checkbox",
 		key: "BaseGame.Reform_Reform_Isabel_Convinced",
 		id: "isabel-convinced-reform",
 	},
 	{
+		tab: "assembly-court",
 		type: "number",
 		key: "BaseGame.Reform_Court_Vote",
 		id: "court-vote-reform",
@@ -190,6 +197,7 @@ export const dataMappings = [
 		max: 8,
 	},
 	{
+		tab: "assembly-court",
 		type: "checkbox",
 		key: "BaseGame.Enable_Congress",
 		id: "enable-congress",
@@ -309,6 +317,7 @@ export const dataMappings = [
 	 *
 	 */
 	{
+		tab: "economy",
 		type: "number",
 		key: "BaseGame.TradeAmount",
 		id: "trade-amount",
@@ -316,6 +325,7 @@ export const dataMappings = [
 		max: 100,
 	},
 	{
+		tab: "economy",
 		type: "number",
 		key: "BaseGame.EconomicReliance",
 		id: "economic-reliance",
@@ -323,46 +333,55 @@ export const dataMappings = [
 		max: 100,
 	},
 	{
+		tab: "economy",
 		type: "checkbox",
 		key: "BaseGame.SuperpowerTradeWarHappened",
 		id: "superpower-trade-war",
 	},
 	{
+		tab: "economy",
 		type: "checkbox",
 		key: "BaseGame.BlackTuesdayHappened",
 		id: "black-tuesday",
 	},
 	{
+		tab: "economy",
 		type: "checkbox",
 		key: "BaseGame.Situation_Economy_MarketsCrash",
 		id: "markets-crash",
 	},
 	{
+		tab: "economy",
 		type: "checkbox",
 		key: "BaseGame.Situation_Economy_GlobalTradeWar",
 		id: "global-trade-war",
 	},
 	{
+		tab: "economy",
 		type: "checkbox",
 		key: "BaseGame.Policy_Economy_RegionalInvestment_Lorren",
 		id: "lorren-reginvest-policy",
 	},
 	{
+		tab: "economy",
 		type: "checkbox",
 		key: "BaseGame.Policy_Economy_RegionalInvestment_Bergia",
 		id: "bergia-reginvest-policy",
 	},
 	{
+		tab: "economy",
 		type: "checkbox",
 		key: "BaseGame.Policy_Economy_RegionalInvestment_Agnland",
 		id: "agnland-reginvest-policy",
 	},
 	{
+		tab: "economy",
 		type: "checkbox",
 		key: "BaseGame.Policy_Economy_RegionalInvestment_Gruni",
 		id: "gruni-reginvest-policy",
 	},
 	{
+		tab: "economy",
 		type: "number",
 		key: "BaseGame.Economy_Agnland",
 		id: "economy-agnland",
@@ -370,21 +389,25 @@ export const dataMappings = [
 		max: 50,
 	},
 	{
+		tab: "economy",
 		type: "checkbox",
 		key: "BaseGame.Situation_Economy_Agnland_MajorFishExport",
 		id: "angland-fish-export",
 	},
 	{
+		tab: "economy",
 		type: "checkbox",
 		key: "BaseGame.Situation_Economy_Agnland_EconomicStabilisation",
 		id: "angland-economic-stabilisation",
 	},
 	{
+		tab: "economy",
 		type: "checkbox",
 		key: "BaseGame.Situation_Economy_Agnland_LackInvestment",
 		id: "angland-lack-investment",
 	},
 	{
+		tab: "economy",
 		type: "number",
 		key: "BaseGame.Economy_Bergia",
 		id: "economy-bergia",
@@ -392,21 +415,25 @@ export const dataMappings = [
 		max: 50,
 	},
 	{
+		tab: "economy",
 		type: "checkbox",
 		key: "BaseGame.Situation_Economy_Bergia_MajorAgriculturalZone",
 		id: "bergia-agriculture-zone",
 	},
 	{
+		tab: "economy",
 		type: "checkbox",
 		key: "BaseGame.Situation_Economy_Bergia_EconomicStabilisation",
 		id: "bergia-economic-stabilisation",
 	},
 	{
+		tab: "economy",
 		type: "checkbox",
 		key: "BaseGame.Situation_Economy_Bergia_EconomicDownturn",
 		id: "bergia-economic-downturn",
 	},
 	{
+		tab: "economy",
 		type: "number",
 		key: "BaseGame.Economy_Lorren",
 		id: "economy-lorren",
@@ -414,21 +441,25 @@ export const dataMappings = [
 		max: 50,
 	},
 	{
+		tab: "economy",
 		type: "checkbox",
 		key: "BaseGame.Situation_Economy_Lorren_ProductionAndTradeCenter",
 		id: "lorren-production-trade-center",
 	},
 	{
+		tab: "economy",
 		type: "checkbox",
 		key: "BaseGame.Situation_Economy_Lorren_EconomicStabilisation",
 		id: "lorren-economic-stabilisation",
 	},
 	{
+		tab: "economy",
 		type: "checkbox",
 		key: "BaseGame.Situation_Economy_Lorren_RustBelt",
 		id: "lorren-rustbelt",
 	},
 	{
+		tab: "economy",
 		type: "number",
 		key: "BaseGame.Economy_Gruni",
 		id: "economy-gruni",
@@ -436,21 +467,25 @@ export const dataMappings = [
 		max: 50,
 	},
 	{
+		tab: "economy",
 		type: "checkbox",
 		key: "BaseGame.Situation_Economy_Gruni_LightTowerRegion",
 		id: "gruni-light-tower",
 	},
 	{
+		tab: "economy",
 		type: "checkbox",
 		key: "BaseGame.Situation_Economy_Gruni_LaggingBehind",
 		id: "gruni-lagging-behind",
 	},
 	{
+		tab: "economy",
 		type: "checkbox",
 		key: "BaseGame.Situation_Economy_Gruni_MaintainingGrowth",
 		id: "gruni-maintaining-growth",
 	},
 	{
+		tab: "economy",
 		type: "radio-group",
 		id: "employment-situations",
 		options: [
@@ -465,6 +500,7 @@ export const dataMappings = [
 		],
 	},
 	{
+		tab: "economy",
 		type: "radio-group",
 		id: "tax-situations",
 		options: [
@@ -483,6 +519,7 @@ export const dataMappings = [
 		],
 	},
 	{
+		tab: "economy",
 		type: "radio-group",
 		id: "gasom-industry",
 		options: [
@@ -501,6 +538,7 @@ export const dataMappings = [
 		],
 	},
 	{
+		tab: "economy",
 		type: "radio-group",
 		id: "transport-situations",
 		options: [
@@ -515,6 +553,7 @@ export const dataMappings = [
 		],
 	},
 	{
+		tab: "economy",
 		type: "radio-group",
 		id: "tourism-situations",
 		options: [
@@ -533,6 +572,7 @@ export const dataMappings = [
 		],
 	},
 	{
+		tab: "economy",
 		type: "radio-group",
 		id: "trade-situations",
 		options: [
@@ -552,6 +592,7 @@ export const dataMappings = [
 	 *
 	 */
 	{
+		tab: "game-condition",
 		type: "radio-group",
 		id: "infrastructure-project",
 		options: [
@@ -566,33 +607,39 @@ export const dataMappings = [
 		],
 	},
 	{
+		tab: "game-condition",
 		type: "checkbox",
 		key: "GameCondition.Turn04_A_Convince_Gloria",
 		id: "convince-gloria",
 	},
 	{
+		tab: "game-condition",
 		type: "checkbox",
 		key: "GameCondition.Turn04_A_Convince_Albin",
 		id: "convince-albin",
 	},
 	{
+		tab: "game-condition",
 		type: "checkbox",
 		key: "GameCondition.Turn07_A_ConvinceIsabel",
 		id: "convince-isabel",
 	},
 	{
+		tab: "game-condition",
 		type: "number",
 		key: "BaseGameIsolated.Turn07_A_Isabel_Opinion",
 		id: "isabel-opinion",
-		min: 0,
+		min: -10,
 		max: 50,
 	},
 	{
+		tab: "game-condition",
 		type: "checkbox",
 		key: "GameCondition.Turn07_A_ConvinceHeron",
 		id: "convince-heron",
 	},
 	{
+		tab: "game-condition",
 		type: "radio-group",
 		id: "military-expansion",
 		options: [
@@ -611,6 +658,7 @@ export const dataMappings = [
 		],
 	},
 	{
+		tab: "game-condition",
 		type: "radio-group",
 		id: "military-modernisation",
 		options: [
@@ -629,11 +677,13 @@ export const dataMappings = [
 		],
 	},
 	{
+		tab: "game-condition",
 		type: "checkbox",
 		key: "GameCondition.Turn10_A_Congress",
 		id: "a-congress",
 	},
 	{
+		tab: "game-condition",
 		type: "number",
 		key: "BaseGameIsolated.Turn10_A_NumberOfResignations",
 		id: "resignations-number",
@@ -641,16 +691,19 @@ export const dataMappings = [
 		max: 8,
 	},
 	{
+		tab: "game-condition",
 		type: "checkbox",
 		key: "GameCondition.Turn10_SnO_RumburgWarPlans",
 		id: "rumburg-war-plans",
 	},
 	{
+		tab: "game-condition",
 		type: "checkbox",
 		key: "GameCondition.Turn10_SnO_RumburgWarSpeech",
 		id: "rumburg-war-speech",
 	},
 	{
+		tab: "game-condition",
 		type: "radio-group",
 		id: "rumburg-war",
 		options: [
@@ -665,11 +718,13 @@ export const dataMappings = [
 		],
 	},
 	{
+		tab: "game-condition",
 		type: "checkbox",
 		key: "GameCondition.Turn11_SnO_WorldWar",
 		id: "world-war",
 	},
 	{
+		tab: "game-condition",
 		type: "checkbox",
 		key: "GameCondition.Turn11_SnO_CoupTrial",
 		id: "coup-d-etat",
