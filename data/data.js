@@ -392,7 +392,7 @@ export const dataMappings = [
 		tab: "economy",
 		type: "checkbox",
 		key: "BaseGame.Situation_Economy_Agnland_MajorFishExport",
-		id: "angland-fish-export",
+		id: "agnland-fish-export",
 	},
 	{
 		tab: "economy",
