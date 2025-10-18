@@ -1,9 +1,22 @@
 import { dataMappings } from "./data/data.js";
 
-import { setupThemeToggle } from "./utils/theme.js";
-import { dragNDrop } from "./utils/drag-n-drop.js";
-import { showAlert } from "./utils/show-alert.js";
-import { tabSwitch } from "./utils/tab-switch.js";
+import { setupThemeToggle, dragNDrop, showAlert, tabSwitch } from "./utils/index.js";
+
+window.appState = {
+	modifiedData: null,
+	variablesString: "",
+	defaultValues: {},
+	hasSpecificInputAlert: false,
+};
+
+// validate input number range with debounce
+function debounce(fn, delay = 300) {
+	let timer;
+	return (...args) => {
+		clearTimeout(timer);
+		timer = setTimeout(() => fn(...args), delay);
+	};
+}
 
 function convertToDatetimeLocal(dateStr) {
 	if (!dateStr) return "";
@@ -50,32 +63,28 @@ function setupBooleanDateToggle() {
 			dateInput.disabled = !checkbox.checked;
 			checkbox.addEventListener("change", () => {
 				dateInput.disabled = !checkbox.checked;
-				// if (!checkbox.checked) dateInput.value = "";
 			});
 		}
 	}
 }
 
-let hasSpecificInputAlert = false;
-
 // validate the input number range
-function validateFieldRange(input, field) {
+const validateFieldRange = debounce((input, field) => {
 	const value = parseInt(input.value, 10);
-	const min = field.min ?? null;
-	const max = field.max ?? null;
+	const { min = null, max = null } = field;
 
 	if ((min !== null && value < min) || (max !== null && value > max)) {
 		input.classList.add("input-invalid");
 		showAlert(`The value must be between ${min} & ${max}`);
-		hasSpecificInputAlert = true;
+		window.appState.hasSpecificInputAlert = true;
 	} else {
 		input.classList.remove("input-invalid");
 	}
 	checkAllValid();
-}
+}, 300);
 
 // prevent download when input number beyond max. or min. limit
-function checkAllValid() {
+const checkAllValid = debounce(() => {
 	let isAllValid = true;
 	const tabErrors = {};
 
@@ -87,14 +96,11 @@ function checkAllValid() {
 			if (!input) continue;
 
 			const value = parseInt(input.value.trim() || "0", 10);
-			const min = field.min ?? null;
-			const max = field.max ?? null;
+			const { min = null, max = null } = field;
 
 			if (isNaN(value) || (min !== null && value < min) || (max !== null && value > max)) {
 				isAllValid = false;
-				// save tab error
 				if (field.tab) tabErrors[field.tab] = true;
-				// mark input error
 				input.classList.add("input-invalid");
 			} else {
 				input.classList.remove("input-invalid");
@@ -103,35 +109,31 @@ function checkAllValid() {
 	}
 
 	Object.keys(tabErrors).forEach((tabName) => {
-		const tabBtn = document.querySelector(`.tab-btn[data-tab="${tabName}"]`);
-		if (tabBtn) tabBtn.classList.add("tab-btn-error");
+		document.querySelector(`.tab-btn[data-tab="${tabName}"]`)?.classList.add("tab-btn-error");
 	});
 
-	// does error occur on inactive tab
 	const activeTab = document.querySelector(".tab-btn.active")?.dataset.tab;
 	const isErrorInOtherTab = Object.keys(tabErrors).some((t) => t !== activeTab);
 
-	if (!isAllValid && isErrorInOtherTab && !hasSpecificInputAlert) {
+	if (!isAllValid && isErrorInOtherTab && !window.appState.hasSpecificInputAlert) {
 		showAlert("There is an input error. Please check the marked tab!");
 	}
 
 	document.getElementById("download-button").disabled = !isAllValid;
-
-	hasSpecificInputAlert = false;
-}
+	window.appState.hasSpecificInputAlert = false;
+}, 300);
 
 function parseFieldsFromSave(variablesString) {
+	const { defaultValues } = window.appState;
+
 	for (const field of dataMappings) {
 		if (field.type === "number") {
 			const match = new RegExp(`\\[\\\"${field.key}\\\"]=(-?\\d+)`).exec(variablesString);
 			const input = document.getElementById(field.id);
 			if (input) {
 				input.value = match ? match[1] : "";
-
-				if (!window.defaultValues) window.defaultValues = {};
-				if (!window.defaultValues[field.tab]) window.defaultValues[field.tab] = {};
-				window.defaultValues[field.tab][field.id] = input.value;
-
+				defaultValues[field.tab] ??= {};
+				defaultValues[field.tab][field.id] = input.value;
 				input.addEventListener("blur", () => validateFieldRange(input, field));
 			}
 		} else if (field.type === "checkbox") {
@@ -139,10 +141,8 @@ function parseFieldsFromSave(variablesString) {
 			const checkbox = document.getElementById(field.id);
 			if (checkbox) {
 				checkbox.checked = match ? match[1] === "true" : false;
-
-				if (!window.defaultValues) window.defaultValues = {};
-				if (!window.defaultValues[field.tab]) window.defaultValues[field.tab] = {};
-				window.defaultValues[field.tab][field.id] = checkbox.checked;
+				defaultValues[field.tab] ??= {};
+				defaultValues[field.tab][field.id] = checkbox.checked;
 			}
 		} else if (field.type === "boolean-date") {
 			const boolMatch = new RegExp(`\\[\\\"${field.key}\\\"]=(true|false)`).exec(variablesString);
@@ -179,12 +179,12 @@ document.getElementById("json-file-input").addEventListener("change", function (
 			const jsonData = JSON.parse(reader.result);
 			const variablesString = jsonData.variables;
 
-			window.modifiedData = jsonData;
-			window.variablesString = variablesString;
-
 			const isValidFile = /GameCondition\.Turn01_A_PoliticalOverview/.test(variablesString);
 
 			if (!isValidFile) return showAlert("This is not a Suzerain save file");
+
+			window.appState.modifiedData = jsonData;
+			window.appState.variablesString = variablesString;
 
 			parseFieldsFromSave(variablesString);
 
@@ -202,15 +202,15 @@ document.getElementById("json-file-input").addEventListener("change", function (
 });
 
 document.getElementById("download-button").addEventListener("click", function () {
-	hasSpecificInputAlert = false;
+	window.appState.hasSpecificInputAlert = false;
 	let isValid = true;
 
-	if (!window.modifiedData || !window.variablesString) {
+	if (!window.appState.modifiedData || !window.appState.variablesString) {
 		showAlert("File not loaded yet");
 		return;
 	}
 
-	let vs = window.variablesString;
+	let vs = window.appState.variablesString;
 
 	for (const field of dataMappings) {
 		if (field.type === "number") {
@@ -258,8 +258,10 @@ document.getElementById("download-button").addEventListener("click", function ()
 
 	if (!isValid) return;
 
-	window.modifiedData.variables = vs;
-	const blob = new Blob([JSON.stringify(window.modifiedData)], { type: "application/json" });
+	window.appState.modifiedData.variables = vs;
+	const blob = new Blob([JSON.stringify(window.appState.modifiedData)], {
+		type: "application/json",
+	});
 	const url = URL.createObjectURL(blob);
 
 	const a = document.createElement("a");
@@ -291,7 +293,7 @@ document.querySelectorAll(".value-toggle-group .value-btn").forEach((btn) => {
 
 		if (!tab) return;
 
-		if (action === "reset" && !window.defaultValues?.[tab]) {
+		if (action === "reset" && !window.appState.defaultValues?.[tab]) {
 			showAlert("File not loaded!");
 			return;
 		}
@@ -308,8 +310,11 @@ document.querySelectorAll(".value-toggle-group .value-btn").forEach((btn) => {
 					input.value = field.max;
 				} else if (action === "min" && field.min !== undefined) {
 					input.value = field.min;
-				} else if (action === "reset" && window.defaultValues?.[tab]?.[field.id] !== undefined) {
-					input.value = window.defaultValues[tab][field.id];
+				} else if (
+					action === "reset" &&
+					window.appState.defaultValues?.[tab]?.[field.id] !== undefined
+				) {
+					input.value = window.appState.defaultValues[tab][field.id];
 				}
 				validateFieldRange(input, field);
 			}
@@ -318,8 +323,11 @@ document.querySelectorAll(".value-toggle-group .value-btn").forEach((btn) => {
 			if (field.type === "checkbox") {
 				if (action === "check") input.checked = true;
 				else if (action === "uncheck") input.checked = false;
-				else if (action === "reset" && window.defaultValues?.[tab]?.[field.id] !== undefined) {
-					input.checked = window.defaultValues[tab][field.id];
+				else if (
+					action === "reset" &&
+					window.appState.defaultValues?.[tab]?.[field.id] !== undefined
+				) {
+					input.checked = window.appState.defaultValues[tab][field.id];
 				}
 			}
 		}
