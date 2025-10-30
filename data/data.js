@@ -398,13 +398,13 @@ export const dataMappings = [
 		tab: "economy",
 		type: "checkbox",
 		key: "BaseGame.Situation_Economy_Agnland_EconomicStabilisation",
-		id: "angland-economic-stabilisation",
+		id: "agnland-economic-stabilisation",
 	},
 	{
 		tab: "economy",
 		type: "checkbox",
 		key: "BaseGame.Situation_Economy_Agnland_LackInvestment",
-		id: "angland-lack-investment",
+		id: "agnland-lack-investment",
 	},
 	{
 		tab: "economy",
