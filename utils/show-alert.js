@@ -8,7 +8,7 @@ export function showAlert(message) {
 			top: "100px",
 			left: "50%",
 			transform: "translateX(-50%)",
-			background: "#f44336",
+			background: "#ff3f7f",
 			color: "#fff",
 			padding: "12px 24px",
 			borderRadius: "6px",

@@ -9,6 +9,49 @@ window.appState = {
 	hasSpecificInputAlert: false,
 };
 
+function resetAppState() {
+	window.appState.modifiedData = null;
+	window.appState.variablesString = "";
+	window.appState.defaultValues = {};
+
+	// Reset all inputs to empty/default
+	for (const field of dataMappings) {
+		if (field.type === "number") {
+			const input = document.getElementById(field.id);
+			if (input) input.value = "";
+		} else if (field.type === "checkbox") {
+			const checkbox = document.getElementById(field.id);
+			if (checkbox) checkbox.checked = false;
+		} else if (field.type === "boolean-date") {
+			const checkbox = document.getElementById(field.id);
+			const dateInput = document.getElementById(field.dateId);
+			if (checkbox) checkbox.checked = false;
+			if (dateInput) {
+				dateInput.value = "";
+				dateInput.disabled = true;
+			}
+		}
+	}
+
+	// Disable buttons
+	document.querySelectorAll(".value-toggle-group .value-btn").forEach((btn) => {
+		btn.setAttribute("disabled", "true");
+	});
+	document.getElementById("download-button").setAttribute("disabled", "true");
+
+	// Reset dropzone UI
+	const dropzone = document.getElementById("dropzone");
+	const filenameDisplay = document.querySelector(".dropzone-filename");
+	dropzone.classList.remove("uploaded");
+	if (filenameDisplay) {
+		filenameDisplay.textContent = "";
+		filenameDisplay.style.display = "none";
+	}
+
+	// Clear file input
+	document.getElementById("json-file-input").value = "";
+}
+
 // validate input number range with debounce
 function debounce(fn, delay = 300) {
 	let timer;
@@ -181,7 +224,10 @@ document.getElementById("json-file-input").addEventListener("change", function (
 
 			const isValidFile = /GameCondition\.Turn01_A_PoliticalOverview/.test(variablesString);
 
-			if (!isValidFile) return showAlert("This is not a Suzerain save file");
+			if (!isValidFile) {
+				resetAppState();
+				return showAlert("This is not a Suzerain save file");
+			}
 
 			window.appState.modifiedData = jsonData;
 			window.appState.variablesString = variablesString;
@@ -194,6 +240,7 @@ document.getElementById("json-file-input").addEventListener("change", function (
 			document.getElementById("download-button").removeAttribute("disabled");
 		} catch (err) {
 			console.error("Error parsing file:", err);
+			resetAppState();
 			showAlert("Only accept JSON file format");
 		}
 	};
