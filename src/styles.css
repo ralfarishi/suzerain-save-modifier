@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+	--color-warm-bg-light: #fdf6e3;
+	--color-warm-surface-light: #fffdf5;
+	--color-warm-border-light: #d6cfc2;
+	--color-warm-text-light: #5c4033;
+	--color-warm-bg-dark: #2c241b;
+	--color-warm-surface-dark: #3d3226;
+	--color-warm-border-dark: #5e4e3e;
+	--color-warm-text-dark: #e6d5c3;
+	--color-warm-accent: #d35400;
+	--color-warm-accent-hover: #e67e22;
+}
+
+body {
+	@apply m-0 transition-colors duration-300 ease-in-out;
+	font-family:
+		-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+		"Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Default Dark Mode (Warm) */
+:root.dark body {
+	background-color: var(--color-warm-bg-dark);
+	color: var(--color-warm-text-dark);
+}
+
+/* Light Mode (Warm) */
+:root:not(.dark) body {
+	background-color: var(--color-warm-bg-light);
+	color: var(--color-warm-text-light);
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+button {
+	cursor: pointer;
+}
+
