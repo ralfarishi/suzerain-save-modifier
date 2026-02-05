@@ -16,6 +16,7 @@ import {
 	ArrowCounterClockwiseIcon,
 	CheckCircleIcon,
 	FileArrowDownIcon,
+	GithubLogoIcon,
 	QuestionIcon,
 	XCircleIcon,
 } from "@phosphor-icons/react";
@@ -221,7 +222,7 @@ export function SaveEditor() {
 	}, [errors]);
 
 	return (
-		<div className="min-h-screen font-sans transition-colors duration-300">
+		<div className="min-h-screen flex flex-col font-sans transition-colors duration-300">
 			{/* Header */}
 			<header className="bg-white/80 dark:bg-warm-bg-dark/90 border-b border-slate-200 dark:border-white/10 sticky top-0 z-50 backdrop-blur-md transition-colors duration-300">
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
@@ -233,6 +234,15 @@ export function SaveEditor() {
 					</div>
 
 					<div className="flex items-center gap-4">
+						<a
+							href="https://github.com/ralfarishi/suzerain-save-editor"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="p-2 text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/10 rounded-lg transition-colors cursor-pointer"
+							title="View on GitHub"
+						>
+							<GithubLogoIcon className="w-5 h-5" />
+						</a>
 						<ThemeSwitcher />
 
 						{fileLoaded && (
@@ -272,7 +282,7 @@ export function SaveEditor() {
 			</header>
 
 			{/* Main Content */}
-			<main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+			<main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
 				{!fileLoaded ? (
 					<div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
 						<div className="text-center mb-12">
@@ -343,6 +353,49 @@ export function SaveEditor() {
 					</div>
 				)}
 			</main>
+			<footer className="mt-auto border-t border-slate-200 dark:border-white/5 py-6 bg-slate-50/50 dark:bg-black/20">
+				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+					<div className="flex flex-col md:flex-row justify-between items-center gap-8">
+						<div className="text-center md:text-left">
+							<p className="text-sm text-slate-500 dark:text-slate-400">
+								© {new Date().getFullYear()} Suzerain Save Editor. All rights reserved.
+							</p>
+						</div>
+
+						<div className="flex flex-col items-center md:items-end gap-4">
+							<span className="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+								Resources
+							</span>
+							<div className="flex flex-wrap justify-center gap-6">
+								<a
+									href="https://steamcommunity.com/sharedfiles/filedetails/?id=3341333208"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="text-sm text-slate-500 hover:text-orange-600 dark:text-slate-400 dark:hover:text-orange-400 transition-colors"
+								>
+									Steam Guide
+								</a>
+								<a
+									href="https://github.com/stevenhoekerd/Magic-Symon"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="text-sm text-slate-500 hover:text-orange-600 dark:text-slate-400 dark:hover:text-orange-400 transition-colors"
+								>
+									Magic-Symon
+								</a>
+								<a
+									href="https://trolledd.github.io/suzerain/"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="text-sm text-slate-500 hover:text-orange-600 dark:text-slate-400 dark:hover:text-orange-400 transition-colors"
+								>
+									Suzerain Editor (trolledd)
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
 
 			{/* Toast Notification */}
 			{toast && (
